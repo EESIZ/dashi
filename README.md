@@ -57,7 +57,7 @@ AI는 그런 과정을 거치지 않았습니다.
 
 
 
-## 글이 지나는 길
+## 판단구조
 
 ```mermaid
 flowchart TD
@@ -74,13 +74,9 @@ flowchart TD
     style G fill:#e1f0e5,stroke:#2b7a44
 ```
 
-게이트가 문장마다 재는 것은 다섯입니다. 명제마다 닫았는가(R1), 판단 뒤에 근거를 붙였는가(R2), 앞에서 준 것을 다시 말했는가(R3), 영어 설득문의 논리 동작을 썼는가(R4), 길이와 호흡이 사람 글 분포 안인가(R5). 걸리면 그 문장과 규칙 본문을 묶어 필자에게 되돌리고, 필자는 사실을 더하지 않고 문장을 합치고 지우고 순서만 바꿔 다시 넣습니다. PASS까지 반복하되 3회를 넘기면 사람에게 보고합니다.
-
-## 구조
 
 <p align="center"><img src="docs/architecture.svg" alt="dashi 구조: 원격(Cloudflare Worker + Container)과 로컬(stdio) 두 길" width="900"></p>
 
-같은 컴파일 바이너리가 두 곳에서 돕니다. 원격은 Cloudflare Worker가 접근 키와 레이트 리밋을 맡고 뒤의 컨테이너가 dashi 서버를 돌리므로, 글 쓰는 사람은 Windows든 macOS든 설치 없이 Claude Code에 주소 한 줄만 더하면 됩니다. 로컬은 Linux x86_64에서 install.sh 한 번으로 같은 서버를 stdio로 띄웁니다.
 
 ## 설치
 
