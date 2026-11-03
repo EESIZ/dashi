@@ -11,7 +11,7 @@ ChatGPT의 등장 이후, 우린 처음에 놀랐습니다.
 
 **"와 진짜 사람 같이 이야기하네"**
 
-하지만 시간이 흘러 우리의 기준이 높아지고 AI가 쓴 글이 미묘하게
+시간이 흐르며 우리의 기준이 높아지고 나니, AI가 쓴 글이 미묘하게
 우리가 배워온 '한국어'와는 다르다는것을 느끼게 됩니다.
 
 그 느낌의 이유는 AI가 애초에 한국인들의 전통적인? 학습과정을 거치지 않았기 때문이죠.
@@ -38,7 +38,7 @@ AI는 그런 과정을 거치지 않았습니다.
 그 외에도 강조를 할 때 우리는
 "나는 세상 그 누구보다도 돈이 많다." 를 표현할때 강조를 위해 주로 '도치' 라는 방법을 사용합니다.
 "난 돈이 많다, 세상 그 누구보다도." 하는 식으로 말입니다.
-그러나 영어는 호흡을 변경시킵니다. 중간에 끊는 식으로 말이죠.
+영어는 그 대신 중간에 끊는 식으로 호흡을 바꿉니다.
 "I have more money than anyone in the world." → "I have more money than anyone. Anyone in the world."
 
 -
@@ -70,15 +70,15 @@ AI는 그런 과정을 거치지 않았습니다.
 
 ### 원격으로 쓰기 (Windows · macOS · Linux, 설치 없음)
 
-서버는 Cloudflare에 떠 있고 키 없이 누구나 씁니다. Claude Code에 이 한 줄만 더하면 됩니다.
+서버는 Cloudflare에 떠 있어서 키 없이 누구나 쓸 수 있고, Claude Code에는 아래 한 줄만 더하면 됩니다.
 
 ```
 claude mcp add --scope user --transport http dashi https://dashi.nisuwa.com/mcp
 ```
 
-그다음 이 저장소의 `skills/dashi/SKILL.md`를 `~/.claude/skills/dashi/SKILL.md`로 복사하면 스킬이 도구를 찾습니다. 파이썬도 형태소 분석기도 사용자 쪽에는 필요 없습니다.
+그다음 이 저장소의 `skills/dashi/SKILL.md`를 `~/.claude/skills/dashi/SKILL.md`로 복사하면 스킬이 도구를 찾으며, 파이썬도 형태소 분석기도 사용자 쪽에는 필요 없습니다.
 
-제한은 하나입니다. 서버 요금이 나오지 않는 선에서 하루 전체 도구 호출을 600회로 막아 두었고, 그날 다 차면 몇 시간 뒤 다시 열리는지 메시지로 알려 줍니다. 더 필요하면 158khs@gmail.com 으로 알려 주세요.
+제한은 하나뿐입니다. 서버 요금이 나오지 않는 선에서 하루 전체 도구 호출을 600회로 막아 두었고, 그날 다 차면 몇 시간 뒤 다시 열리는지 메시지로 알려 주니, 더 필요하면 158khs@gmail.com 으로 알려 주세요.
 
 ### 직접 설치해서 쓰기 (Linux x86_64)
 
@@ -88,7 +88,7 @@ sh ~/.claude/skills/dashi/skills/dashi/install.sh
 claude mcp add --scope user dashi -- ~/.claude/skills/dashi/skills/dashi/.venv/bin/python ~/.claude/skills/dashi/skills/dashi/scripts/dashi.py
 ```
 
-요구: Python 3.12, uv. 핵심 모듈은 컴파일된 바이너리(`scripts/*.so`)로만 배포한다.
+Python 3.12와 uv가 있어야 하고, 핵심 모듈은 컴파일된 바이너리(`scripts/*.so`)로만 배포합니다.
 
 ## 도구
 
@@ -103,7 +103,7 @@ CC BY-NC 4.0. 비영리 사용·수정·재배포는 저작자(EESIZ) 표시 조
 
 ## 제3자 소프트웨어 고지
 
-이 스킬은 아래 소프트웨어를 수정 없이 사용합니다. 각각은 자체 라이선스를 따르며, `requirements.txt`로 별도 설치됩니다.
+이 스킬은 아래 소프트웨어를 수정 없이 사용하며, 각각은 자체 라이선스를 따르고 `requirements.txt`로 별도 설치됩니다.
 
 - [Kiwi / kiwipiepy](https://github.com/bab2min/Kiwi) 0.22.2 — 한국어 형태소 분석기 — GNU LGPL v3 ([본문](https://www.gnu.org/licenses/lgpl-3.0.html))
 - [kiwipiepy_model](https://github.com/bab2min/Kiwi) 0.22.1 — Kiwi 모델 — GNU LGPL v3
