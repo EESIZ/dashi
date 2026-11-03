@@ -73,7 +73,7 @@ AI는 그런 과정을 거치지 않았습니다.
 서버는 Cloudflare에 떠 있고 접근 키로만 열립니다. 키를 받은 사람은 Claude Code에 이 한 줄만 더하면 됩니다.
 
 ```
-claude mcp add --scope user --transport http dashi https://dashi.nisuwa.com/mcp --header "Authorization: Bearer <접근 키>"
+claude mcp add --scope user --transport http dashi https://dashi-mcp.158khs.workers.dev/mcp --header "Authorization: Bearer <접근 키>"
 ```
 
 그다음 이 저장소의 `skills/dashi/SKILL.md`를 `~/.claude/skills/dashi/SKILL.md`로 복사하면 스킬이 도구를 찾습니다. 파이썬도 형태소 분석기도 사용자 쪽에는 필요 없습니다. 요청은 분당 60회로 제한됩니다.
