@@ -70,13 +70,15 @@ AI는 그런 과정을 거치지 않았습니다.
 
 ### 원격으로 쓰기 (Windows · macOS · Linux, 설치 없음)
 
-서버는 Cloudflare에 떠 있고 접근 키로만 열립니다. 키를 받은 사람은 Claude Code에 이 한 줄만 더하면 됩니다.
+서버는 Cloudflare에 떠 있고 키 없이 누구나 씁니다. Claude Code에 이 한 줄만 더하면 됩니다.
 
 ```
-claude mcp add --scope user --transport http dashi https://dashi.nisuwa.com/mcp --header "Authorization: Bearer <접근 키>"
+claude mcp add --scope user --transport http dashi https://dashi.nisuwa.com/mcp
 ```
 
-그다음 이 저장소의 `skills/dashi/SKILL.md`를 `~/.claude/skills/dashi/SKILL.md`로 복사하면 스킬이 도구를 찾습니다. 파이썬도 형태소 분석기도 사용자 쪽에는 필요 없습니다. 요청은 분당 60회로 제한됩니다.
+그다음 이 저장소의 `skills/dashi/SKILL.md`를 `~/.claude/skills/dashi/SKILL.md`로 복사하면 스킬이 도구를 찾습니다. 파이썬도 형태소 분석기도 사용자 쪽에는 필요 없습니다.
+
+제한은 하나입니다. 서버 요금이 나오지 않는 선에서 하루 전체 도구 호출을 600회로 막아 두었고, 그날 다 차면 몇 시간 뒤 다시 열리는지 메시지로 알려 줍니다. 더 필요하면 158khs@gmail.com 으로 알려 주세요.
 
 ### 직접 설치해서 쓰기 (Linux x86_64)
 
