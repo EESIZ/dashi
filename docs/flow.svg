@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" width="900" height="640" font-family="Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="14">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2d"/></marker>
+  </defs>
+  <rect width="900" height="640" fill="#fbfaf6"/>
+  <text x="24" y="34" font-size="17" font-weight="700" fill="#1c1b17">판단구조</text>
+  <text x="24" y="56" font-size="12.5" fill="#6c685c">왼쪽 번호는 실제 순서입니다. 4와 6은 같은 게이트이고, FAIL이면 5를 거쳐 다시 4로 돌아옵니다.</text>
+
+  <!-- 세로 선 -->
+  <line x1="52" y1="96" x2="52" y2="596" stroke="#dcd7c9" stroke-width="2"/>
+
+  <!-- 단계 행: y 간격 62 -->
+  <g>
+    <circle cx="52" cy="96" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="101" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">0</text>
+    <text x="84" y="92" font-weight="700" fill="#1c1b17">입장을 세운다</text>
+    <text x="84" y="111" font-size="12.5" fill="#6c685c">누가, 누구에게, 무엇을 바라며 쓰는가. 요청에 없으면 장르 화자 안에서 고르고 사용자에게 보인다.</text>
+  </g>
+  <g>
+    <circle cx="52" cy="158" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="163" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">1</text>
+    <text x="84" y="154" font-weight="700" fill="#1c1b17">장르를 정한다</text><text x="212" y="154" font-family="monospace" font-size="11.5" fill="#2a4b7c">classify</text>
+    <text x="84" y="173" font-size="12.5" fill="#6c685c">표면 지표로 사람 글 분포와의 거리를 재고 관용구 규칙 적중을 함께 본다.</text>
+  </g>
+  <g>
+    <circle cx="52" cy="220" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="225" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">2</text>
+    <text x="84" y="216" font-weight="700" fill="#1c1b17">뼈대를 뽑는다</text><text x="212" y="216" font-family="monospace" font-size="11.5" fill="#2a4b7c">skeleton</text>
+    <text x="84" y="235" font-size="12.5" fill="#6c685c">사실·전문·인용·해석·판단·당위의 순서를 사람 글 분포에서 뽑는다. 판단은 사실 뒤에, 끝은 장르답게.</text>
+  </g>
+  <g>
+    <circle cx="52" cy="282" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="287" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">3</text>
+    <text x="84" y="278" font-weight="700" fill="#1c1b17">살 붙이기</text>
+    <text x="84" y="297" font-size="12.5" fill="#6c685c">사실 및 판단 내용. 첫 통과는 사실만 볼 순서대로, 둘째 통과에서 뼈대가 정한 칸만 판단·당위로.</text>
+  </g>
+  <g>
+    <circle cx="52" cy="344" r="15" fill="#f8e3df" stroke="#b23a2d" stroke-width="2"/><text x="52" y="349" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#b23a2d">4</text>
+    <text x="84" y="340" font-weight="700" fill="#1c1b17">문장 게이트</text><text x="196" y="340" font-family="monospace" font-size="11.5" fill="#2a4b7c">sentence_gate</text>
+    <text x="84" y="359" font-size="12.5" fill="#6c685c">명제마다 닫았는가, 되풀이했는가, 길이·호흡이 사람 글 분포 안인가를 문장마다 잰다. 결과는 PASS 또는 FAIL.</text>
+  </g>
+  <g>
+    <circle cx="52" cy="406" r="15" fill="#f6ecd4" stroke="#9a6b12" stroke-width="2"/><text x="52" y="411" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#9a6b12">5</text>
+    <text x="84" y="402" font-weight="700" fill="#1c1b17">규칙을 주입해 다시 쓴다</text><text x="268" y="402" font-family="monospace" font-size="11.5" fill="#2a4b7c">regen_prompt</text>
+    <text x="84" y="421" font-size="12.5" fill="#6c685c">걸린 문장과 규칙 본문을 묶어 필자에게 되돌린다. 실패 문장 수정, 사실 변경·추가 금지.</text>
+  </g>
+  <g>
+    <circle cx="52" cy="468" r="15" fill="#e1f0e5" stroke="#2b7a44" stroke-width="2"/><text x="52" y="473" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#2b7a44">6</text>
+    <text x="84" y="464" font-weight="700" fill="#1c1b17">다시 게이트, PASS까지</text><text x="268" y="464" font-family="monospace" font-size="11.5" fill="#2a4b7c">sentence_gate</text>
+    <text x="84" y="483" font-size="12.5" fill="#6c685c">횟수로 끝내지 않는다. 글 단위(R5)만 남아도 계속하고, 실제 PASS를 받은 본문만 전달한다.</text>
+  </g>
+  <g>
+    <circle cx="52" cy="530" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="535" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">7</text>
+    <text x="84" y="526" font-weight="700" fill="#1c1b17">표면 검사</text><text x="168" y="526" font-family="monospace" font-size="11.5" fill="#2a4b7c">check</text>
+    <text x="84" y="545" font-size="12.5" fill="#6c685c">지표 20여 개를 장르 분포, 백분위로 대조한다. 경고는 참고로 보고하고 게이트 통과와 구분한다.</text>
+  </g>
+  <g>
+    <circle cx="52" cy="592" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="597" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">8</text>
+    <text x="84" y="588" font-weight="700" fill="#1c1b17">기록</text><text x="128" y="588" font-family="monospace" font-size="11.5" fill="#2a4b7c">correction · tag_save</text>
+    <text x="84" y="607" font-size="12.5" fill="#6c685c">사람이 고쳐 준 표현과 꼬리표를 저장해 다음 글에서 찾아 쓴다.</text>
+  </g>
+
+  <!-- FAIL 루프: 5 → 4 -->
+  <path d="M28,406 C-4,406 -4,344 28,344" stroke="#b23a2d" stroke-width="1.8" fill="none" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+  <text x="14" y="380" font-size="10.5" fill="#b23a2d" transform="rotate(-90 14 380)" text-anchor="middle">FAIL</text>
+</svg>

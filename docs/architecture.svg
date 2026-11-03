@@ -18,7 +18,7 @@
 
   <!-- Cloudflare -->
   <rect x="300" y="40" width="660" height="240" rx="12" fill="#f3efe4" stroke="#c9b98f" stroke-width="1.5"/>
-  <text x="320" y="64" font-weight="700" fill="#1c1b17">원격 (Cloudflare) — 설치 없이 쓰는 길</text>
+  <text x="320" y="64" font-weight="700" fill="#1c1b17">원격 (Cloudflare) — 설치 없이 쓰는 방법</text>
   <rect x="320" y="80" width="210" height="110" rx="8" fill="#fff" stroke="#dcd7c9" stroke-width="1.5"/>
   <text x="425" y="104" text-anchor="middle" font-weight="700" fill="#1c1b17">Worker</text>
   <text x="425" y="126" text-anchor="middle" fill="#6c685c" font-size="11.5">접근 키 검사 (Bearer)</text>
@@ -37,7 +37,7 @@
 
   <!-- 로컬 -->
   <rect x="300" y="300" width="660" height="150" rx="12" fill="#fff" stroke="#dcd7c9" stroke-width="1.5"/>
-  <text x="320" y="324" font-weight="700" fill="#1c1b17">로컬 — 직접 설치해서 쓰는 길 (Linux x86_64)</text>
+  <text x="320" y="324" font-weight="700" fill="#1c1b17">로컬 — 직접 설치해서 쓰는 방법 (Linux x86_64)</text>
   <rect x="320" y="340" width="300" height="90" rx="8" fill="#e4ebf5" stroke="#2a4b7c" stroke-width="1.5"/>
   <text x="470" y="364" text-anchor="middle" font-weight="700" fill="#1c1b17">scripts/dashi.py → server.so</text>
   <text x="470" y="386" text-anchor="middle" fill="#6c685c" font-size="11.5">같은 컴파일 모듈 · .venv(uv, 3.12)</text>
