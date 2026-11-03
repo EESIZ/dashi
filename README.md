@@ -68,13 +68,25 @@ AI는 그런 과정을 거치지 않았습니다.
 
 ## 설치
 
+### 원격으로 쓰기 (Windows · macOS · Linux, 설치 없음)
+
+서버는 Cloudflare에 떠 있고 접근 키로만 열립니다. 키를 받은 사람은 Claude Code에 이 한 줄만 더하면 됩니다.
+
+```
+claude mcp add --scope user --transport http dashi https://dashi.nisuwa.com/mcp --header "Authorization: Bearer <접근 키>"
+```
+
+그다음 이 저장소의 `skills/dashi/SKILL.md`를 `~/.claude/skills/dashi/SKILL.md`로 복사하면 스킬이 도구를 찾습니다. 파이썬도 형태소 분석기도 사용자 쪽에는 필요 없습니다. 요청은 분당 60회로 제한됩니다.
+
+### 직접 설치해서 쓰기 (Linux x86_64)
+
 ```
 git clone https://github.com/EESIZ/dashi ~/.claude/skills/dashi
 sh ~/.claude/skills/dashi/skills/dashi/install.sh
 claude mcp add --scope user dashi -- ~/.claude/skills/dashi/skills/dashi/.venv/bin/python ~/.claude/skills/dashi/skills/dashi/scripts/dashi.py
 ```
 
-요구: Linux x86_64, Python 3.12, uv. 핵심 모듈은 컴파일된 바이너리(`scripts/*.so`)로만 배포한다.
+요구: Python 3.12, uv. 핵심 모듈은 컴파일된 바이너리(`scripts/*.so`)로만 배포한다.
 
 ## 도구
 
