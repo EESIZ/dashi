@@ -1,6 +1,6 @@
 ---
 name: dashi
-description: 한국어 글의 AI 티를 찾고 지우는 작법·검사 스킬. MCP 서버 dashi의 도구(sentence_gate / regen_prompt / check / skeleton / classify / tag_guide / tag_save / correction / stats)로 입장을 세우고 → 뼈대를 뽑고 → 채우고 → 문장 게이트를 통과할 때까지 고친다. "윤문", "AI 냄새", "AI 티", "한국어답게", "사설처럼", "신문 문체"가 언급되거나 한국어 글을 쓰거나 다듬을 때 사용한다.
+description: 한국어 글의 AI 티를 찾고 지우는 작법·검사 스킬. MCP 서버 dashi의 도구(sentence_gate / regen_prompt / check / skeleton / classify / tag_guide / tag_save / correction / stats / legal_guide / legal_examples / legal_style)로 입장을 세우고 → 뼈대를 뽑고 → 채우고 → 문장 게이트를 통과할 때까지 고친다. 법률문서(판결문·소장·준비서면·의견서·계약서)는 스킬 안에 내장된 MEKA 곽윤직(legal/) 절차로 쓴다. "윤문", "AI 냄새", "AI 티", "한국어답게", "사설처럼", "신문 문체"가 언급되거나 한국어 글을 쓰거나 다듬을 때 사용한다.
 ---
 
 # dashi
@@ -11,6 +11,7 @@ description: 한국어 글의 AI 티를 찾고 지우는 작법·검사 스킬. 
 
 0. **입장** — 쓰기 전에 관계(당사자/우호/비판/심판)·독자·의도 한 동사·안 쓸 말 둘을 정한다. 요청에 없으면 장르 화자 안에서 고르고 사용자에게 보인다. 사람이 쓴 원문을 다듬을 때는 원문의 어미에서 뽑는다.
 1. **장르** — `classify(text)` 후보를 요청과 맞춰 정하고, 장르는 묶음 이름으로 넘긴다: `논설`(사설·칼럼·기사·연설·논술), `법률문서`(판결문·결정문·소송서류·계약서). 행정문서·문학은 준비 중이라 가장 가까운 묶음을 쓰고 사용자에게 말한다. 옛 이름(사설·판결문)도 받아 준다.
+   - **법률문서면 아래 2~5단계를 쓰지 않는다.** 스킬 안의 [legal/SKILL.md](legal/SKILL.md)(MEKA 곽윤직) 절차를 그대로 따른다: 전개 방식 선택 → 작성 → 판례 근거 게이트 → 문체 측정·퇴고 → 형식 게이트. 절차와 전개 방식·서식은 `legal_guide`로 받고, 예문은 `legal_examples`, 문체 측정은 `legal_style`(수정 전 본문을 `before`로)을 쓴다. 로컬 설치면 `legal/scripts/style_check.py`와 `format_check.py`를 직접 실행해도 같다. 법률문서에 `sentence_gate`·`skeleton`·`check`를 넣으면 안내만 돌아온다.
 2. **뼈대** — `skeleton(genre)`가 주는 문장 기능 뼈대와 `rules`를 그대로 따른다.
 3. **채우기** — 첫 통과는 사실만 볼 순서대로, 둘째 통과에서 뼈대가 정한 칸만 판단·당위로 채운다. 앞에 없는 근거로 판단하지 않는다.
 4. **문장 게이트** — `sentence_gate(text, genre)`. FAIL이면 `regen_prompt(text, genre)`가 주는 프롬프트대로 지목된 문장과 필요한 앞뒤 문장을 고치고 본문 전체를 다시 검사한다. 사실을 더하지 않는다.

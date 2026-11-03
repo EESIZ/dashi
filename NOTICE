@@ -16,4 +16,10 @@ not bundled in this repository.
     https://github.com/modelcontextprotocol/python-sdk
     MIT License
 
+Bundled in this repository (skills/dashi/legal/):
+
+  MEKA 곽윤직 (meka-gwak)  Korean legal-writing skill, scripts and reference data
+    https://github.com/EESIZ/meka_gwak
+    MIT License, Copyright (c) 2026 EESIZ — see skills/dashi/legal/LICENSE
+
 The dashi code itself is licensed under CC BY-NC 4.0 (see LICENSE).
