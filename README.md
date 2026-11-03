@@ -1,4 +1,4 @@
-# dashi — 윤문(yunmun)
+# dashi
 
 한국어 글에서 AI 티를 찾고 지우는 Claude Code 스킬 + MCP 서버.
 
@@ -8,8 +8,8 @@
 
 ```
 git clone https://github.com/EESIZ/dashi ~/.claude/skills/dashi
-sh ~/.claude/skills/dashi/skills/yunmun/install.sh
-claude mcp add --scope user yunmun -- ~/.claude/skills/dashi/skills/yunmun/.venv/bin/python ~/.claude/skills/dashi/skills/yunmun/scripts/yunmun.py
+sh ~/.claude/skills/dashi/skills/dashi/install.sh
+claude mcp add --scope user dashi -- ~/.claude/skills/dashi/skills/dashi/.venv/bin/python ~/.claude/skills/dashi/skills/dashi/scripts/dashi.py
 ```
 
 요구: Linux x86_64, Python 3.12, uv. 핵심 모듈은 컴파일된 바이너리(`scripts/*.so`)로만 배포한다.

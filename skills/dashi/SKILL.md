@@ -1,11 +1,11 @@
 ---
-name: yunmun
-description: 한국어 글의 AI 티를 찾고 지우는 작법·검사 스킬. MCP 서버 yunmun의 도구(sentence_gate / regen_prompt / check / skeleton / classify / tag_guide / tag_save / correction / stats)로 입장을 세우고 → 뼈대를 뽑고 → 채우고 → 문장 게이트를 통과할 때까지 고친다. "윤문", "AI 냄새", "AI 티", "한국어답게", "사설처럼", "신문 문체"가 언급되거나 한국어 글을 쓰거나 다듬을 때 사용한다.
+name: dashi
+description: 한국어 글의 AI 티를 찾고 지우는 작법·검사 스킬. MCP 서버 dashi의 도구(sentence_gate / regen_prompt / check / skeleton / classify / tag_guide / tag_save / correction / stats)로 입장을 세우고 → 뼈대를 뽑고 → 채우고 → 문장 게이트를 통과할 때까지 고친다. "윤문", "AI 냄새", "AI 티", "한국어답게", "사설처럼", "신문 문체"가 언급되거나 한국어 글을 쓰거나 다듬을 때 사용한다.
 ---
 
-# 윤문
+# dashi
 
-도구는 MCP 서버 `yunmun`에 있다(설치는 install.sh). 규칙 본문과 기준 분포는 서버 안에 들어 있으므로 도구가 돌려주는 설명을 그대로 따른다.
+도구는 MCP 서버 `dashi`에 있다(설치는 install.sh). 규칙 본문과 기준 분포는 서버 안에 들어 있으므로 도구가 돌려주는 설명을 그대로 따른다.
 
 ## 순서
 
