@@ -94,6 +94,8 @@ claude mcp add --scope user dashi -- ~/.claude/skills/dashi/skills/dashi/.venv/b
 
 `sentence_gate`, `regen_prompt`, `check`, `skeleton`, `classify`, `tag_guide`, `tag_save`, `correction`, `stats`
 
+내장 기준 분포: 논설(사설 6,763편, 2020~2022) · 법률문서(판결문·결정문 1,659편, ~2021). 행정문서·문학은 준비 중.
+
 ## 라이선스
 
 CC BY-NC 4.0. 비영리 사용·수정·재배포는 저작자(EESIZ) 표시 조건으로 허용하며, 상업적 이용은 허용하지 않습니다. 
