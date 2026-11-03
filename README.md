@@ -41,9 +41,7 @@ AI는 그런 과정을 거치지 않았습니다.
 
 -
 
-<!-- 그림 자리: docs/dashi.png 를 올리면 아래 줄의 주석을 풀어 주세요.
-<p align="center"><img src="docs/dashi.png" alt="다시 — 보고서를 돌려주는 소령과 타자기 머리의 로봇" width="720"></p>
--->
+<p align="center"><img src="docs/dashi.webp" alt="다시 — 보고서를 돌려주는 소령과 타자기 머리의 로봇" width="720"></p>
 
 예전 군 생활을 시작할 소위 시절, 보고서를 가지고 작전과장(소령)에게 가져가면 늘,
 "다시" 라는 말을 듣곤 했습니다.
