@@ -63,11 +63,11 @@ AI는 그런 과정을 거치지 않았습니다.
 flowchart TD
     A["0 입장<br/>관계 · 독자 · 의도 한 동사"] --> B["1 장르<br/>classify"]
     B --> C["2 뼈대<br/>skeleton: 사실→판단 순서, 끝 유형"]
-    C --> D["3 채우기<br/>사실 먼저, 판단은 뼈대가 정한 칸만"]
+    C --> D["3 살 붙이기<br/>사실 및 판단 내용"]
     D --> E{"4 문장 게이트<br/>sentence_gate"}
     E -- FAIL --> F["5 규칙 주입<br/>regen_prompt: 실패 문장 + 규칙 본문"]
-    F -- "실패 문장만 고침 (사실 추가 금지)" --> E
-    E -- PASS --> G["6 표면 검사<br/>check: 장르 분포와 백분위 대조"]
+    F -- "실패 문장 수정 (사실 변경,추가 금지)" --> E
+    E -- PASS --> G["6 표면 검사<br/>check: 장르 분포, 백분위 대조"]
     G --> H["7 기록<br/>correction · tag_save"]
     style E fill:#f8e3df,stroke:#b23a2d
     style F fill:#f6ecd4,stroke:#9a6b12
