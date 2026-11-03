@@ -73,3 +73,11 @@ claude mcp add --scope user dashi -- ~/.claude/skills/dashi/skills/dashi/.venv/b
 
 CC BY-NC 4.0. 비영리 사용·수정·재배포는 저작자(EESIZ) 표시 조건으로 허용하며, 상업적 이용은 허용하지 않습니다. 
 관련하여 문의사항은 esiz@nisuwa.com 으로 연락 바랍니다.
+
+## 제3자 소프트웨어 고지
+
+이 스킬은 아래 소프트웨어를 수정 없이 사용합니다. 각각은 자체 라이선스를 따르며, `requirements.txt`로 별도 설치됩니다.
+
+- [Kiwi / kiwipiepy](https://github.com/bab2min/Kiwi) 0.22.2 — 한국어 형태소 분석기 — GNU LGPL v3 ([본문](https://www.gnu.org/licenses/lgpl-3.0.html))
+- [kiwipiepy_model](https://github.com/bab2min/Kiwi) 0.22.1 — Kiwi 모델 — GNU LGPL v3
+- [mcp](https://github.com/modelcontextprotocol/python-sdk) — Model Context Protocol Python SDK — MIT
