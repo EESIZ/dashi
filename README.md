@@ -41,6 +41,8 @@ AI는 그런 과정을 거치지 않았습니다.
 
 -
 
+<p align="center"><img src="docs/dashi.png" alt="다시 — 보고서를 돌려주는 소령과 타자기 머리의 로봇" width="720"></p>
+
 예전 군 생활을 시작할 소위 시절, 보고서를 가지고 작전과장(소령)에게 가져가면 늘,
 "다시" 라는 말을 듣곤 했습니다.
 
@@ -54,6 +56,31 @@ AI는 그런 과정을 거치지 않았습니다.
 
 
 
+
+## 글이 지나는 길
+
+```mermaid
+flowchart TD
+    A["0 입장<br/>관계 · 독자 · 의도 한 동사"] --> B["1 장르<br/>classify"]
+    B --> C["2 뼈대<br/>skeleton: 사실→판단 순서, 끝 유형"]
+    C --> D["3 채우기<br/>사실 먼저, 판단은 뼈대가 정한 칸만"]
+    D --> E{"4 문장 게이트<br/>sentence_gate"}
+    E -- FAIL --> F["5 규칙 주입<br/>regen_prompt: 실패 문장 + 규칙 본문"]
+    F -- "실패 문장만 고침 (사실 추가 금지)" --> E
+    E -- PASS --> G["6 표면 검사<br/>check: 장르 분포와 백분위 대조"]
+    G --> H["7 기록<br/>correction · tag_save"]
+    style E fill:#f8e3df,stroke:#b23a2d
+    style F fill:#f6ecd4,stroke:#9a6b12
+    style G fill:#e1f0e5,stroke:#2b7a44
+```
+
+게이트가 문장마다 재는 것은 다섯입니다. 명제마다 닫았는가(R1), 판단 뒤에 근거를 붙였는가(R2), 앞에서 준 것을 다시 말했는가(R3), 영어 설득문의 논리 동작을 썼는가(R4), 길이와 호흡이 사람 글 분포 안인가(R5). 걸리면 그 문장과 규칙 본문을 묶어 필자에게 되돌리고, 필자는 사실을 더하지 않고 문장을 합치고 지우고 순서만 바꿔 다시 넣습니다. PASS까지 반복하되 3회를 넘기면 사람에게 보고합니다.
+
+## 구조
+
+<p align="center"><img src="docs/architecture.svg" alt="dashi 구조: 원격(Cloudflare Worker + Container)과 로컬(stdio) 두 길" width="900"></p>
+
+같은 컴파일 바이너리가 두 곳에서 돕니다. 원격은 Cloudflare Worker가 접근 키와 레이트 리밋을 맡고 뒤의 컨테이너가 dashi 서버를 돌리므로, 글 쓰는 사람은 Windows든 macOS든 설치 없이 Claude Code에 주소 한 줄만 더하면 됩니다. 로컬은 Linux x86_64에서 install.sh 한 번으로 같은 서버를 stdio로 띄웁니다.
 
 ## 설치
 
