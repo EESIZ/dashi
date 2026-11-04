@@ -78,8 +78,6 @@ claude mcp add --scope user --transport http dashi https://dashi.nisuwa.com/mcp
 
 그다음 이 저장소의 `skills/dashi/SKILL.md`를 `~/.claude/skills/dashi/SKILL.md`로 복사하면 스킬이 도구를 찾으며, 파이썬도 형태소 분석기도 사용자 쪽에는 필요 없습니다.
 
-제한은 하나뿐입니다. 서버 요금이 나오지 않는 선에서 하루 전체 도구 호출을 600회로 막아 두었고, 그날 다 차면 몇 시간 뒤 다시 열리는지 메시지로 알려 주니, 더 필요하면 158khs@gmail.com 으로 알려 주세요.
-
 ### 직접 설치해서 쓰기 (Linux x86_64)
 
 ```
@@ -100,10 +98,6 @@ Python 3.12와 uv가 있어야 하고, 핵심 모듈은 컴파일된 바이너�
 
 CC BY-NC 4.0. 비영리 사용·수정·재배포는 저작자(EESIZ) 표시 조건으로 허용하며, 상업적 이용은 허용하지 않습니다. 
 관련하여 문의사항은 esiz@nisuwa.com 으로 연락 바랍니다.
-
-## 법률문서는 MEKA 곽윤직으로
-
-판결문형 초안, 소장, 준비서면, 의견서는 dashi의 문장 게이트로 검사하지 않습니다. 스킬 안에 [MEKA 곽윤직](skills/dashi/legal/SKILL.md)이 통째로 들어 있고, 장르가 법률문서이면 그 규칙을 씁니다. 전개 방식 고르기, 판례 근거 확인, 실무 문체 측정, 서식 대조가 전부 거기 있습니다. 원격 서버에는 같은 검사기가 `legal_guide`, `legal_examples`, `legal_style`로 올라가 있어서 따로 설치할 것이 없습니다.
 
 ## 제3자 소프트웨어 고지
 
