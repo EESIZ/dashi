@@ -90,7 +90,7 @@ Python 3.12와 uv가 있어야 하고, 핵심 모듈은 컴파일된 바이너�
 
 ## 도구
 
-`sentence_gate`, `regen_prompt`, `check`, `skeleton`, `classify`, `tag_guide`, `tag_save`, `correction`, `stats`
+`sentence_gate`, `regen_prompt`, `check`, `skeleton`, `classify`, `tag_guide`, `stats`
 
 내장 기준 분포: 논설(사설 6,763편, 2020~2022) · 법률문서(판결문·결정문 1,659편, ~2021). 행정문서·문학은 준비 중.
 
