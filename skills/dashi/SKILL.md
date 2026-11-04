@@ -1,6 +1,6 @@
 ---
 name: dashi
-description: 한국어 글에서 AI 티를 찾고 지우는 작법·검사 스킬. 장르를 가린 뒤 장르마다 다른 경로로 쓴다. 논설(사설·칼럼·논술·주장문·토론문)은 opinion/ 경로(입장표 → 전개 방식 → 뼈대 → 채우기 → 문장 게이트), 법률문서(판결문·소장·준비서면·의견서·계약서)는 스킬 안에 내장된 MEKA 곽윤직 legal/ 경로로 쓴다. 도구는 MCP 서버 dashi(classify/opinion_guide/skeleton/sentence_gate/regen_prompt/check/tag_guide/stats/legal_guide/legal_examples/legal_style). "윤문", "AI 냄새", "AI 티", "한국어답게", "사설처럼", "신문 문체"가 언급되거나 한국어 글을 쓰거나 다듬을 때 사용한다.
+description: 한국어 글에서 AI 티를 찾고 지우는 작법·검사 스킬. 장르를 가린 뒤 장르마다 다른 경로로 쓴다. 논설(사설·칼럼·논술·주장문·토론문)은 opinion/ 경로(입장표 → 전개 방식 → 뼈대 → 채우기 → 문장 게이트), 법률문서(판결문·소장·준비서면·의견서·계약서)는 스킬 안에 내장된 MEKA 곽윤직 legal/ 경로로 쓴다. 도구는 MCP 서버 dashi(classify/opinion_guide/skeleton/sentence_gate/regen_prompt/check/tag_guide/stats/legal_guide/legal_examples/legal_style/admin_check). "윤문", "AI 냄새", "AI 티", "한국어답게", "사설처럼", "신문 문체"가 언급되거나 한국어 글을 쓰거나 다듬을 때 사용한다.
 ---
 
 # 윤문
@@ -22,7 +22,10 @@ AI 한국어의 티는 문장보다 앞에서 생긴다. 누가 말하는지가 
 |---|---|---|---|
 | 논설 | 사설·칼럼·기사·연설·논술·주장문·토론문 | [opinion/SKILL.md](opinion/SKILL.md) | 입장표 → 전개 방식(E·A·O) → `skeleton` → 채우기 → `sentence_gate` 루프 → `check` |
 | 법률문서 | 판결문·결정문·소장·준비서면·의견서·계약서 | [legal/SKILL.md](legal/SKILL.md) (MEKA 곽윤직) | 전개 방식(P·O) → 작성 → 판례 근거 게이트 → `legal_style` 측정·퇴고 → 형식 게이트 |
-| 행정문서 | 공문·보고서·기술문서·학술 | 없음 | 분포 눈금만 있다. 요청이 오면 경로가 없다고 말하고, 사용자가 원할 때만 논설 경로의 문장 게이트를 행정문서 눈금으로 돌린다 |
+| 행정문서 | 공문(시행문·기안문) | 편람 규정 | 「행정업무운영 편람」 규정대로 쓰고 `admin_check(text, form='공문')`으로 표기·어문을 검사한다. 지목된 자리만 고친다 |
+| 행정문서 | 보도자료·공고·안내문 | 없음 | 쓰기 경로가 없다. 사용자가 검사를 원하면 `admin_check`(form='보도자료' 또는 '공문')로 표기만 본다 |
+| 행정문서 | 법령·행정규칙(조문) | 없음 | 쓰기 경로가 없다. 사용자가 이름을 댈 때만 `admin_check(form='조문')`(법제처 입안 기준)으로 검사한다 |
+| 행정문서 | 보고서·기술문서·학술 | 없음 | 분포 눈금만 있다. 요청이 오면 경로가 없다고 말하고, 사용자가 원할 때만 논설 경로의 문장 게이트를 행정문서 눈금으로 돌린다 |
 | 문학 | 소설·수필 | 없음 | 같다 |
 
 경로의 절차와 전개 방식은 `opinion_guide`·`legal_guide`가 돌려준다. 한 경로의 도구를 다른 경로의 장르에 넣으면 안내만 돌아온다.
