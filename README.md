@@ -61,7 +61,7 @@ AI는 그런 과정을 거치지 않았습니다.
 
 ## 판단구조
 
-<p align="center"><img src="docs/flow.svg" alt="글이 지나는 길: 입장 → 장르 → 뼈대 → 채우기 → 문장 게이트 → 규칙 주입 → 다시 게이트(PASS까지) → 표면 검사 → 기록" width="900"></p>
+<p align="center"><img src="docs/flow.svg" alt="논설 글이 지나는 길: 입장 → 경로 → 뼈대 → 채우기 → 문장 게이트 → 규칙 주입 → 다시 게이트(PASS까지) → 표면 검사 → 넘기기" width="900"></p>
 
 <p align="center"><img src="docs/architecture.svg" alt="dashi 구조: 원격(Cloudflare Worker + Container)과 로컬(stdio) 두 방법" width="900"></p>
 
@@ -81,18 +81,38 @@ claude mcp add --scope user --transport http dashi https://dashi.nisuwa.com/mcp
 ### 직접 설치해서 쓰기 (Linux x86_64)
 
 ```
-git clone https://github.com/EESIZ/dashi ~/.claude/skills/dashi
-sh ~/.claude/skills/dashi/skills/dashi/install.sh
-claude mcp add --scope user dashi -- ~/.claude/skills/dashi/skills/dashi/.venv/bin/python ~/.claude/skills/dashi/skills/dashi/scripts/dashi.py
+git clone https://github.com/EESIZ/dashi ~/dashi
+ln -s ~/dashi/skills/dashi ~/.claude/skills/dashi
+sh ~/.claude/skills/dashi/install.sh
+claude mcp add --scope user dashi -- ~/.claude/skills/dashi/.venv/bin/python ~/.claude/skills/dashi/scripts/dashi.py
 ```
 
-Python 3.12와 uv가 있어야 하고, 핵심 모듈은 컴파일된 바이너리(`scripts/*.so`)로만 배포합니다.
+Claude Code는 스킬 폴더 바로 아래의 SKILL.md(`~/.claude/skills/<이름>/SKILL.md`)만 스킬로 읽으므로, 저장소 안의 `skills/dashi` 폴더를 그 자리에 잇습니다. Python 3.12와 uv가 있어야 하고, 핵심 모듈은 컴파일된 바이너리(`scripts/*.so`)로만 배포합니다.
 
 ## 도구
 
-`sentence_gate`, `regen_prompt`, `check`, `skeleton`, `classify`, `tag_guide`, `stats`
+| 도구 | 하는 일 |
+|---|---|
+| `route` | 요청을 읽어 장르 경로를 정하고, 글쓰기·다듬기에서는 맨 먼저 부른다 |
+| `classify` | 원문의 장르 후보를 사람 글 분포와의 거리로 보여 준다 |
+| `opinion_guide` · `skeleton` | 논설 경로의 절차와 전개 방식, 사람 사설에서 뽑은 문장 기능 뼈대 |
+| `sentence_gate` · `regen_prompt` | 문장 규칙 검사(PASS/FAIL)와, 걸린 문장을 고치게 하는 교정 프롬프트 |
+| `check` · `tag_guide` | 표면 지표를 장르 분포와 대조하고, 꼬리표를 달면 판단 위치까지 본다 |
+| `legal_guide` · `legal_examples` · `legal_style` | 법률문서 경로(MEKA 곽윤직)의 절차, 판례 예문, 문체 측정 |
+| `admin_check` | 행정문서 표기·어문을 검사하는데, 공문은 편람으로, 조문은 법제처 입안 기준으로 잰다 |
+| `stats` | 내장 분포의 장르별 편수 |
 
-내장 기준 분포: 논설(사설 6,763편, 2020~2022) · 법률문서(판결문·결정문 1,659편, ~2021). 행정문서·문학은 준비 중.
+모든 도구는 읽기 전용이라, 받은 글을 저장하지 않고 기준 분포도 바꾸지 않습니다.
+
+내장 기준 분포는 논설·법률문서·행정문서 세 장르에 있습니다.
+
+| 장르 | 사람 글 | 시기 |
+|---|---|---|
+| 논설 | 사설 6,763편 | 2020~2022 |
+| 법률문서 | 판결문·결정문 1,659편 | ~2021 |
+| 행정문서 | 법령·행정규칙 6,971편(조문·서식·시행문), 보도자료 427편 | ~2021 |
+
+문학은 아직 분포가 없고, 문장 기능 뼈대(`skeleton`)는 논설에만 있습니다.
 
 ## 라이선스
 

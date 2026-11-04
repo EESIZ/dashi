@@ -1,4 +1,4 @@
-"""dashi(윤문) MCP 서버 진입점. 컴파일된 모듈(*.so)을 같은 폴더에서 읽는다.
+"""dashi MCP 서버 진입점. 컴파일된 모듈(*.so)을 같은 폴더에서 읽는다.
 실행: <skill>/.venv/bin/python <skill>/scripts/dashi.py
 """
 import os, sys

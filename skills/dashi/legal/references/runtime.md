@@ -2,6 +2,12 @@
 
 스킬 폴더를 기준으로 경로를 지정한다. 작업 파일은 사용자 작업 폴더에 둔다. 본문은 UTF-8 텍스트로 저장하고 실제 문단 사이에 빈 줄을 둔다. Markdown 제목은 구분하여 집계하고, `>` 인용 블록은 별도로 측정한다. 본문 안의 직접 인용도 문체 분리 측정이 필요하면 인용 블록으로 표시한다.
 
+## dashi 안에서 쓸 때
+
+dashi에 내장된 이 경로에서는 측정 스크립트 둘을 MCP 도구로 부른다. `style_check.py examples`는 `legal_examples(domain, document_type, query, pattern, limit)`에, `style_check.py check`는 `legal_style(text, domain, document_type, before)`에 대응한다. 도구는 본문을 파일 경로가 아니라 글로 받고, `before`에는 수정 전 본문을 넣는다.
+
+`format_check.py`에 대응하는 도구는 없어서, 저장소를 직접 설치한 경우에만 dashi의 `.venv/bin/python`으로 `<skill>/legal/scripts/format_check.py`를 돌린다. 의존성은 dashi의 `install.sh`가 이미 깔아 두었으므로 아래 가상환경은 따로 만들지 않는다. 원격으로만 쓰면 `format_check.py`를 돌릴 수 없으니, 5번 형식 게이트의 항목·첨부 대조는 [서식 확인](format.md)을 보며 손으로 한다.
+
 ## 실행 환경
 
 Python 3.10 이상을 사용한다. 처음 실행할 때 사용자 작업 폴더에 가상환경을 준비하고 의존성을 설치한다.

@@ -7,8 +7,8 @@
   <rect x="20" y="60" width="210" height="110" rx="10" fill="#fff" stroke="#dcd7c9" stroke-width="1.5"/>
   <text x="125" y="86" text-anchor="middle" font-weight="700" fill="#1c1b17">Claude Code (필자)</text>
   <text x="125" y="108" text-anchor="middle" fill="#6c685c" font-size="11.5">Windows · macOS · Linux</text>
-  <text x="125" y="128" text-anchor="middle" fill="#6c685c" font-size="11.5">SKILL.md 절차: 입장 → 뼈대 → 채우기</text>
-  <text x="125" y="146" text-anchor="middle" fill="#6c685c" font-size="11.5">→ 게이트 → 고치기 → 검사 → 기록</text>
+  <text x="125" y="128" text-anchor="middle" fill="#6c685c" font-size="11.5">SKILL.md 절차: route → 장르별 경로</text>
+  <text x="125" y="146" text-anchor="middle" fill="#6c685c" font-size="11.5">→ 쓰기 → 게이트 → 고치기 → 검사</text>
 
   <!-- 두 갈래 -->
   <path d="M230,95 L300,95" stroke="#6c685c" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
@@ -21,19 +21,21 @@
   <text x="320" y="64" font-weight="700" fill="#1c1b17">원격 (Cloudflare) — 설치 없이 쓰는 방법</text>
   <rect x="320" y="80" width="210" height="110" rx="8" fill="#fff" stroke="#dcd7c9" stroke-width="1.5"/>
   <text x="425" y="104" text-anchor="middle" font-weight="700" fill="#1c1b17">Worker</text>
-  <text x="425" y="126" text-anchor="middle" fill="#6c685c" font-size="11.5">접근 키 검사 (Bearer)</text>
-  <text x="425" y="144" text-anchor="middle" fill="#6c685c" font-size="11.5">레이트 리밋 · DDoS/봇 차단</text>
+  <text x="425" y="126" text-anchor="middle" fill="#6c685c" font-size="11.5">키 없음 · 누구나</text>
+  <text x="425" y="144" text-anchor="middle" fill="#6c685c" font-size="11.5">하루 전체 600회 상한</text>
   <text x="425" y="162" text-anchor="middle" fill="#6c685c" font-size="11.5">/mcp 만 통과</text>
   <path d="M530,135 L580,135" stroke="#6c685c" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
   <rect x="580" y="80" width="360" height="180" rx="8" fill="#e4ebf5" stroke="#2a4b7c" stroke-width="1.5"/>
   <text x="760" y="104" text-anchor="middle" font-weight="700" fill="#1c1b17">Container: dashi 서버 (python 3.12)</text>
-  <text x="760" y="126" text-anchor="middle" fill="#6c685c" font-size="11.5">컴파일 모듈 .so 아홉 개 · 소스 없음</text>
-  <rect x="600" y="140" width="150" height="26" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="675" y="158" text-anchor="middle" font-family="monospace" font-size="11" fill="#1c1b17">sentence_gate</text>
-  <rect x="770" y="140" width="150" height="26" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="845" y="158" text-anchor="middle" font-family="monospace" font-size="11" fill="#1c1b17">regen_prompt</text>
-  <rect x="600" y="172" width="150" height="26" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="675" y="190" text-anchor="middle" font-family="monospace" font-size="11" fill="#1c1b17">check · classify</text>
-  <rect x="770" y="172" width="150" height="26" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="845" y="190" text-anchor="middle" font-family="monospace" font-size="11" fill="#1c1b17">skeleton · tag_* · correction</text>
-  <text x="760" y="222" text-anchor="middle" fill="#6c685c" font-size="11.5">kiwipiepy 형태소 분석 · refstats(사람 사설 6,763편 분포 + 규칙 본문)</text>
-  <text x="760" y="242" text-anchor="middle" fill="#6c685c" font-size="11.5">잠들었다가 요청 오면 깸 · 집 서버와 분리</text>
+  <text x="760" y="126" text-anchor="middle" fill="#6c685c" font-size="11.5">컴파일 모듈 .so 열세 개 · 소스 없음</text>
+  <rect x="593" y="134" width="165" height="24" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="675" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#1c1b17">route · classify · stats</text>
+  <rect x="762" y="134" width="165" height="24" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="844" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#1c1b17">opinion_guide · skeleton</text>
+  <rect x="593" y="162" width="165" height="24" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="675" y="178" text-anchor="middle" font-family="monospace" font-size="10" fill="#1c1b17">sentence_gate · check</text>
+  <rect x="762" y="162" width="165" height="24" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="844" y="178" text-anchor="middle" font-family="monospace" font-size="10" fill="#1c1b17">regen_prompt · tag_guide</text>
+  <rect x="593" y="190" width="165" height="24" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="675" y="206" text-anchor="middle" font-family="monospace" font-size="10" fill="#1c1b17">legal_guide·examples·style</text>
+  <rect x="762" y="190" width="165" height="24" rx="5" fill="#fff" stroke="#dcd7c9"/><text x="844" y="206" text-anchor="middle" font-family="monospace" font-size="10" fill="#1c1b17">admin_check</text>
+  <text x="760" y="232" text-anchor="middle" fill="#6c685c" font-size="11.5">kiwipiepy 형태소 분석 · refstats(논설·법률·행정 분포 + 규칙 본문)</text>
+  <text x="760" y="251" text-anchor="middle" fill="#6c685c" font-size="11.5">잠들었다가 요청 오면 깸 · 집 서버와 분리</text>
 
   <!-- 로컬 -->
   <rect x="300" y="300" width="660" height="150" rx="12" fill="#fff" stroke="#dcd7c9" stroke-width="1.5"/>
@@ -43,9 +45,9 @@
   <text x="470" y="386" text-anchor="middle" fill="#6c685c" font-size="11.5">같은 컴파일 모듈 · .venv(uv, 3.12)</text>
   <text x="470" y="406" text-anchor="middle" fill="#6c685c" font-size="11.5">install.sh 한 번</text>
   <rect x="640" y="340" width="300" height="90" rx="8" fill="#fff" stroke="#dcd7c9" stroke-width="1.5"/>
-  <text x="790" y="364" text-anchor="middle" font-weight="700" fill="#1c1b17">data/dashi.sqlite</text>
-  <text x="790" y="386" text-anchor="middle" fill="#6c685c" font-size="11.5">비어서 시작 · 꼬리표·교정 쌍이</text>
-  <text x="790" y="406" text-anchor="middle" fill="#6c685c" font-size="11.5">쓰는 사람 쪽에 쌓임</text>
+  <text x="790" y="364" text-anchor="middle" font-weight="700" fill="#1c1b17">읽기 전용</text>
+  <text x="790" y="386" text-anchor="middle" fill="#6c685c" font-size="11.5">받은 글·꼬리표·교정문을</text>
+  <text x="790" y="406" text-anchor="middle" fill="#6c685c" font-size="11.5">어디에도 저장하지 않음</text>
   <path d="M620,385 L640,385" stroke="#6c685c" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
 
   <!-- 루프 -->
@@ -55,5 +57,5 @@
   <!-- 빌드 -->
   <rect x="20" y="480" width="940" height="62" rx="10" fill="#fff" stroke="#dcd7c9" stroke-width="1.5"/>
   <text x="36" y="503" font-weight="700" fill="#1c1b17">배포 빌드</text>
-  <text x="36" y="525" fill="#6c685c" font-size="11.5">소스(비공개) → 분포·규칙을 상수로 굽기 → Cython → strip → .so 1.6MB → 같은 바이너리를 로컬 저장소와 컨테이너 이미지에 넣음. 올라가지 않는 것: 소스 .py, DB, 수집 원문.</text>
+  <text x="36" y="525" fill="#6c685c" font-size="11.5">소스(비공개) → 분포·규칙·경로 트리를 상수로 굽기 → Cython → strip → .so 2.6MB → 같은 바이너리를 저장소와 컨테이너에 넣음. 안 올리는 것: 소스 .py, DB, 수집 원문.</text>
 </svg>
