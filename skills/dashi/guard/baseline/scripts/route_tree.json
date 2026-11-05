@@ -1,0 +1,1071 @@
+{
+ "version": 1,
+ "slots": {
+  "stance": {
+   "q": "찬성 쪽인가요, 반대 쪽인가요?",
+   "req": true
+  },
+  "material": {
+   "q": "참고할 자료가 있으면 붙여 주세요.",
+   "req": false,
+   "from_file": true
+  },
+  "case_material": {
+   "q": "사건 자료를 붙여 주세요.",
+   "req": true,
+   "from_file": true
+  },
+  "content": {
+   "q": "무슨 내용인가요?",
+   "req": true
+  },
+  "ask_type": {
+   "q": "승인이 필요한 건가요, 알리기만 하면 되나요?",
+   "req": true
+  },
+  "recipient": {
+   "q": "누구에게 보내나요?",
+   "req": true
+  },
+  "experience": {
+   "q": "어떤 경험을 쓰나요?",
+   "req": true
+  },
+  "occasion": {
+   "q": "어떤 자리, 어떤 일인가요?",
+   "req": true
+  },
+  "target_work": {
+   "q": "무엇을 보거나 읽고 쓰는 글인가요?",
+   "req": true
+  },
+  "topic": {
+   "q": "무엇에 대한 글인가요?",
+   "req": true
+  },
+  "force": {
+   "q": "꼭 따라야 하는 내용인가요, 참고로 알리는 내용인가요?",
+   "req": true
+  }
+ },
+ "nodes": {
+  "1": {
+   "name": "주장의 글",
+   "parent": null,
+   "card": null
+  },
+  "1.1": {
+   "name": "논설·평론",
+   "parent": "1",
+   "card": {
+    "purpose": "주장",
+    "function": "표출·능동",
+    "typification": "중간",
+    "community": "언론·비평",
+    "medium": "문어"
+   },
+   "ask_name": "논설·평론"
+  },
+  "1.1.a": {
+   "name": "논설·평론",
+   "parent": "1.1",
+   "slots": [
+    "stance",
+    "material"
+   ],
+   "path": "opinion",
+   "db": [
+    [
+     "논설",
+     "사설"
+    ]
+   ],
+   "n_docs": 6763,
+   "situation": {
+    "sender": [
+     "언론사",
+     "개인"
+    ],
+    "receiver": [
+     "불특정독자"
+    ],
+    "purpose": [
+     "설득"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "사설·칼럼·시사평론·서평·작품 평론"
+  },
+  "1.2": {
+   "name": "법적 주장",
+   "parent": "1",
+   "card": {
+    "purpose": "주장",
+    "function": "능동·지시적",
+    "typification": "강함",
+    "community": "법률",
+    "medium": "문어"
+   },
+   "ask_name": "법률 문서",
+   "part": "법률"
+  },
+  "1.2.a": {
+   "name": "판결문·결정문",
+   "parent": "1.2",
+   "slots": [
+    "case_material"
+   ],
+   "path": "legal",
+   "db": [
+    [
+     "법률문서",
+     "판결문"
+    ],
+    [
+     "법률문서",
+     "결정문"
+    ]
+   ],
+   "n_docs": 1659,
+   "situation": {
+    "sender": [
+     "법원"
+    ],
+    "receiver": [
+     "소송당사자"
+    ],
+    "purpose": [
+     "판정"
+    ],
+    "medium": [
+     "글"
+    ]
+   }
+  },
+  "1.2.b": {
+   "name": "소장·준비서면",
+   "parent": "1.2",
+   "slots": [
+    "case_material"
+   ],
+   "path": "legal",
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "소송당사자"
+    ],
+    "receiver": [
+     "법원"
+    ],
+    "purpose": [
+     "청구"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "소장·준비서면·답변서"
+  },
+  "1.2.c": {
+   "name": "의견서",
+   "parent": "1.2",
+   "slots": [
+    "case_material"
+   ],
+   "path": "legal",
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인",
+     "기업단체"
+    ],
+    "receiver": [
+     "특정개인",
+     "특정기관",
+     "법원"
+    ],
+    "purpose": [
+     "설득",
+     "알림"
+    ],
+    "medium": [
+     "글"
+    ]
+   }
+  },
+  "1.3": {
+   "name": "공적 말하기와 요청",
+   "parent": "1",
+   "card": {
+    "purpose": "주장",
+    "function": "능동",
+    "typification": "중간",
+    "community": "공공",
+    "medium": "구어·문어"
+   },
+   "ask_name": "연설·건의문"
+  },
+  "1.3.a": {
+   "name": "연설문",
+   "parent": "1.3",
+   "slots": [
+    "occasion",
+    "stance"
+   ],
+   "path": "opinion",
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "receiver": [
+     "불특정독자",
+     "특정기관"
+    ],
+    "purpose": [
+     "설득",
+     "관계"
+    ],
+    "medium": [
+     "말"
+    ]
+   },
+   "desc": "축사·기념사·강연·연설 원고"
+  },
+  "1.3.b": {
+   "name": "건의·요청문",
+   "parent": "1.3",
+   "slots": [
+    "recipient",
+    "content"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인",
+     "기업단체",
+     "행정기관"
+    ],
+    "receiver": [
+     "특정기관",
+     "특정개인"
+    ],
+    "purpose": [
+     "설득",
+     "청구"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "기관이나 단체에 무엇을 해 달라고 하는 글"
+  },
+  "1.4": {
+   "name": "학교 논증문",
+   "parent": "1",
+   "card": {
+    "purpose": "주장",
+    "function": "능동",
+    "typification": "중간",
+    "community": "교육",
+    "medium": "문어"
+   },
+   "ask_name": "논술·토론문"
+  },
+  "1.4.a": {
+   "name": "논술",
+   "parent": "1.4",
+   "slots": [
+    "topic",
+    "stance"
+   ],
+   "path": "opinion",
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "평가자"
+    ],
+    "purpose": [
+     "설득"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "대입·입사 논술 답안"
+  },
+  "1.4.b": {
+   "name": "주장문·토론문",
+   "parent": "1.4",
+   "slots": [
+    "topic",
+    "stance"
+   ],
+   "path": "opinion",
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "평가자"
+    ],
+    "purpose": [
+     "설득"
+    ],
+    "medium": [
+     "글",
+     "말"
+    ]
+   }
+  },
+  "2": {
+   "name": "정보 전달의 글",
+   "parent": null,
+   "card": null
+  },
+  "2.1": {
+   "name": "알리는 글",
+   "parent": "2",
+   "card": {
+    "purpose": "정보 전달",
+    "function": "지시적",
+    "typification": "중간",
+    "community": "언론·행정",
+    "medium": "문어"
+   },
+   "ask_name": "기사·보도자료"
+  },
+  "2.1.a": {
+   "name": "기사·보도자료",
+   "parent": "2.1",
+   "slots": [
+    "material"
+   ],
+   "path": null,
+   "db": [
+    [
+     "행정문서",
+     "일반문서/보도자료"
+    ]
+   ],
+   "n_docs": 427,
+   "situation": {
+    "sender": [
+     "언론사",
+     "행정기관",
+     "기업단체"
+    ],
+    "receiver": [
+     "불특정독자",
+     "언론",
+     "일반국민"
+    ],
+    "purpose": [
+     "알림"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "언론 기사·기관 보도자료"
+  },
+  "2.2": {
+   "name": "업무 문서",
+   "parent": "2",
+   "card": {
+    "purpose": "정보 전달",
+    "function": "능동·지시적",
+    "typification": "강함",
+    "community": "기관·기업 공통",
+    "medium": "문어"
+   },
+   "ask_name": "공문·공지"
+  },
+  "2.2.a": {
+   "name": "공문",
+   "parent": "2.2",
+   "slots": [
+    "recipient",
+    "content"
+   ],
+   "path": "admin_rules",
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "행정기관",
+     "기업단체"
+    ],
+    "receiver": [
+     "특정기관"
+    ],
+    "purpose": [
+     "알림",
+     "규정지시",
+     "청구"
+    ],
+    "medium": [
+     "글"
+    ]
+   }
+  },
+  "2.2.b": {
+   "name": "공고·공지·안내문",
+   "parent": "2.2",
+   "slots": [
+    "content",
+    "force"
+   ],
+   "path": null,
+   "db": [
+    [
+     "행정문서",
+     "공고문서/공고"
+    ]
+   ],
+   "n_docs": 17,
+   "situation": {
+    "sender": [
+     "행정기관",
+     "기업단체"
+    ],
+    "receiver": [
+     "일반국민",
+     "불특정독자",
+     "소속기관직원"
+    ],
+    "purpose": [
+     "알림",
+     "규정지시"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "공지·안내문·공고문(효력 있는 것과 참고용 모두)"
+  },
+  "2.2.c": {
+   "name": "보고서",
+   "parent": "2.2",
+   "slots": [
+    "content"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "receiver": [
+     "특정기관",
+     "소속기관직원",
+     "특정개인"
+    ],
+    "purpose": [
+     "알림"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "업무 보고서·현황 보고"
+  },
+  "2.2.d": {
+   "name": "매뉴얼·가이드",
+   "parent": "2.2",
+   "slots": [
+    "content"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "기업단체",
+     "행정기관"
+    ],
+    "receiver": [
+     "일반국민",
+     "불특정독자"
+    ],
+    "purpose": [
+     "알림",
+     "규정지시"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "매뉴얼·설명서·사용법·가이드"
+  },
+  "2.2.e": {
+   "name": "자기소개서",
+   "parent": "2.2",
+   "slots": [
+    "content"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "특정기관"
+    ],
+    "purpose": [
+     "알림",
+     "설득"
+    ],
+    "medium": [
+     "글"
+    ]
+   }
+  },
+  "2.3": {
+   "name": "법령·규정",
+   "parent": "2",
+   "card": {
+    "purpose": "정보 전달",
+    "function": "능동",
+    "typification": "강함",
+    "community": "법률",
+    "medium": "문어"
+   },
+   "ask_name": "법령·규정",
+   "part": "법률"
+  },
+  "2.3.a": {
+   "name": "법령·규정",
+   "parent": "2.3",
+   "slots": [
+    "content"
+   ],
+   "path": null,
+   "db": [
+    [
+     "행정문서",
+     "법규문서/법령"
+    ],
+    [
+     "행정문서",
+     "법규문서/부령"
+    ],
+    [
+     "행정문서",
+     "법규문서/규칙"
+    ],
+    [
+     "행정문서",
+     "지시문서/훈령"
+    ],
+    [
+     "행정문서",
+     "지시문서/예규"
+    ],
+    [
+     "행정문서",
+     "지시문서/기타"
+    ],
+    [
+     "행정문서",
+     "공고문서/고시"
+    ]
+   ],
+   "n_docs": 6954,
+   "situation": {
+    "sender": [
+     "행정기관",
+     "법원"
+    ],
+    "receiver": [
+     "일반국민",
+     "소속기관직원"
+    ],
+    "purpose": [
+     "규정지시"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "explicit_only": true
+  },
+  "2.3.b": {
+   "name": "계약서",
+   "parent": "2.3",
+   "slots": [
+    "content"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인",
+     "기업단체",
+     "행정기관"
+    ],
+    "receiver": [
+     "특정개인",
+     "특정기관"
+    ],
+    "purpose": [
+     "규정지시"
+    ],
+    "medium": [
+     "글"
+    ]
+   }
+  },
+  "2.4": {
+   "name": "학술",
+   "parent": "2",
+   "card": {
+    "purpose": "정보 전달",
+    "function": "지시적·메타언어적",
+    "typification": "중간",
+    "community": "학술",
+    "medium": "문어"
+   },
+   "ask_name": "학술 글"
+  },
+  "2.4.a": {
+   "name": "논문",
+   "parent": "2.4",
+   "slots": [
+    "topic",
+    "material"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "연구자"
+    ],
+    "receiver": [
+     "학계"
+    ],
+    "purpose": [
+     "알림",
+     "설득"
+    ],
+    "medium": [
+     "글"
+    ]
+   }
+  },
+  "3": {
+   "name": "사교·친교의 글",
+   "parent": null,
+   "card": null
+  },
+  "3.1": {
+   "name": "업무 소통",
+   "parent": "3",
+   "card": {
+    "purpose": "사교",
+    "function": "교감·능동",
+    "typification": "중간에서 강함",
+    "community": "직장",
+    "medium": "문어"
+   },
+   "ask_name": "업무 메일"
+  },
+  "3.1.a": {
+   "name": "업무 이메일",
+   "parent": "3.1",
+   "slots": [
+    "content",
+    "ask_type"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "특정개인"
+    ],
+    "purpose": [
+     "알림",
+     "청구",
+     "관계"
+    ],
+    "medium": [
+     "글"
+    ]
+   }
+  },
+  "3.2": {
+   "name": "의례 글",
+   "parent": "3",
+   "card": {
+    "purpose": "사교",
+    "function": "교감",
+    "typification": "강함",
+    "community": "공동체",
+    "medium": "문어·구어"
+   },
+   "ask_name": "축하·인사 글"
+  },
+  "3.2.a": {
+   "name": "축하·위로·사과글",
+   "parent": "3.2",
+   "slots": [
+    "occasion",
+    "recipient"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인",
+     "기업단체"
+    ],
+    "receiver": [
+     "특정개인"
+    ],
+    "purpose": [
+     "관계"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "축하·위로·사과의 글이나 메시지"
+  },
+  "3.2.b": {
+   "name": "초청장·인사말",
+   "parent": "3.2",
+   "slots": [
+    "occasion"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인",
+     "기업단체",
+     "행정기관"
+    ],
+    "receiver": [
+     "특정개인",
+     "불특정독자"
+    ],
+    "purpose": [
+     "관계"
+    ],
+    "medium": [
+     "글",
+     "말"
+    ]
+   },
+   "desc": "초청장·행사 인사말"
+  },
+  "3.3": {
+   "name": "사적 소통",
+   "parent": "3",
+   "card": {
+    "purpose": "사교",
+    "function": "교감",
+    "typification": "약함",
+    "community": "개인",
+    "medium": "문어"
+   },
+   "ask_name": "편지·문자"
+  },
+  "3.3.a": {
+   "name": "편지·문자·메모",
+   "parent": "3.3",
+   "slots": [
+    "recipient",
+    "content"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "특정개인"
+    ],
+    "purpose": [
+     "관계",
+     "알림"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "사적인 편지·문자·메모"
+  },
+  "4": {
+   "name": "문학",
+   "parent": null,
+   "card": null
+  },
+  "4.1": {
+   "name": "시",
+   "parent": "4",
+   "slots": [
+    "topic"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "불특정독자"
+    ],
+    "purpose": [
+     "표현"
+    ],
+    "medium": [
+     "글",
+     "말"
+    ]
+   },
+   "card": {
+    "purpose": "문학",
+    "function": "시적·표출",
+    "typification": "약함",
+    "community": "개인",
+    "medium": "문어"
+   },
+   "ask_name": "시"
+  },
+  "4.2": {
+   "name": "소설",
+   "parent": "4",
+   "slots": [
+    "topic"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "불특정독자"
+    ],
+    "purpose": [
+     "표현"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "card": {
+    "purpose": "문학",
+    "function": "시적·표출",
+    "typification": "약함",
+    "community": "개인",
+    "medium": "문어"
+   },
+   "ask_name": "소설",
+   "subtree": "route_tree_novel.json"
+  },
+  "4.3": {
+   "name": "희곡·시나리오",
+   "parent": "4",
+   "slots": [
+    "topic"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "불특정독자"
+    ],
+    "purpose": [
+     "표현"
+    ],
+    "medium": [
+     "말",
+     "글"
+    ]
+   },
+   "card": {
+    "purpose": "문학",
+    "function": "시적·표출",
+    "typification": "약함",
+    "community": "개인",
+    "medium": "문어"
+   },
+   "ask_name": "희곡·시나리오"
+  },
+  "4.4": {
+   "name": "수필",
+   "parent": "4",
+   "card": {
+    "purpose": "문학",
+    "function": "표출",
+    "typification": "약함",
+    "community": "개인",
+    "medium": "문어"
+   },
+   "ask_name": "수필·일기·감상문"
+  },
+  "4.4.a": {
+   "name": "수필·기행문",
+   "parent": "4.4",
+   "slots": [
+    "experience"
+   ],
+   "path": "essay",
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "불특정독자"
+    ],
+    "purpose": [
+     "표현"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "수필·에세이·기행문"
+  },
+  "4.4.b": {
+   "name": "일기·자서전",
+   "parent": "4.4",
+   "slots": [
+    "experience"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "자신",
+     "불특정독자"
+    ],
+    "purpose": [
+     "표현"
+    ],
+    "medium": [
+     "글"
+    ]
+   }
+  },
+  "4.4.c": {
+   "name": "감상문",
+   "parent": "4.4",
+   "slots": [
+    "target_work"
+   ],
+   "path": null,
+   "db": [],
+   "n_docs": 0,
+   "situation": {
+    "sender": [
+     "개인"
+    ],
+    "receiver": [
+     "불특정독자",
+     "평가자",
+     "자신"
+    ],
+    "purpose": [
+     "표현"
+    ],
+    "medium": [
+     "글"
+    ]
+   },
+   "desc": "책·영화·공연·전시 감상문"
+  }
+ },
+ "questions": {
+  "depth1": "어떤 글인가요? 주장하는 글, 알리는 글, 편지나 메일, 시·소설·수필 같은 문학 중에서요.",
+  "choose": "{names} 중 어떤 글인가요?"
+ },
+ "rules": {
+  "max_required_per_ask": 2,
+  "max_optional_per_ask": 1,
+  "max_asks_per_slot": 2
+ },
+ "situation_values": {
+  "sender": [
+   "개인",
+   "언론사",
+   "법원",
+   "소송당사자",
+   "행정기관",
+   "기업단체",
+   "연구자"
+  ],
+  "receiver": [
+   "불특정독자",
+   "소송당사자",
+   "법원",
+   "소속기관직원",
+   "일반국민",
+   "언론",
+   "특정기관",
+   "특정개인",
+   "학계",
+   "평가자",
+   "자신"
+  ],
+  "purpose": [
+   "설득",
+   "판정",
+   "청구",
+   "규정지시",
+   "알림",
+   "관계",
+   "표현"
+  ],
+  "medium": [
+   "글",
+   "말"
+  ]
+ },
+ "situation_questions": {
+  "sender": "누가 쓰는 글인가요?",
+  "receiver": "누구에게 보내는 글인가요?",
+  "purpose": "무엇을 하려는 글인가요?",
+  "medium": "글로 읽히나요, 말로 하나요?"
+ },
+ "paths": {
+  "opinion": "논설 경로",
+  "legal": "법률 경로",
+  "admin_rules": "편람 규정 경로",
+  "essay": "수필 경로"
+ }
+}

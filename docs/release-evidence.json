@@ -1,0 +1,62 @@
+{
+  "release": "2026-11-06-guard-1",
+  "platform": "Linux x86_64 CPython3.12",
+  "model": "claude-opus-5-5",
+  "test_results": {
+    "source_regressions": {
+      "passed": 190
+    },
+    "compiled_boundary_parity": {
+      "passed": 17
+    },
+    "compiled_core_regressions": {
+      "passed": 97
+    },
+    "legacy_legal_integration": {
+      "passed": 7
+    },
+    "fresh_install_stdio": {
+      "assertions_passed": 10,
+      "actual_tool_calls": 7,
+      "model_calls": 0
+    }
+  },
+  "live_quality": {
+    "initial_compiled": {
+      "completed": 3,
+      "attempted": 4,
+      "withheld": "essay: semantic_review_failed"
+    },
+    "bounded_paired": {
+      "source_completed": 3,
+      "compiled_completed": 4,
+      "attempted_each": 4,
+      "withheld": "source essay: semantic_review_failed",
+      "retries": 0
+    },
+    "blinded": {
+      "source": {
+        "reviewed": 3,
+        "passed": 3,
+        "mean_naturalness": 3.6666666666666665
+      },
+      "initial_compiled": {
+        "reviewed": 3,
+        "passed": 3,
+        "mean_naturalness": 4.0
+      },
+      "compiled": {
+        "reviewed": 4,
+        "passed": 4,
+        "mean_naturalness": 4.0
+      }
+    },
+    "limitation": "small synthetic sample; no universal equivalence claim; no token remeasurement"
+  },
+  "artifacts": {
+    "guard_build_manifest": "12f679e78c3f8b499d35f26a6a4f5b452d38db9a7235ef5bd32f1b6ea19e2909",
+    "core_build_manifest": "27c910615852e5d471ad2aa52e81cafc7822da1dfa37804eafaa3c600fe91956"
+  },
+  "cloud": "unchanged; attempted live catalog check received HTTP403, 13-tool scope verified from unchanged deployed source/config",
+  "full_private_reproduction": "passed: tools/build_release.py from private checkout to empty destination, both builders and both acceptance scripts"
+}

@@ -1,0 +1,203 @@
+{
+ "version": 1,
+ "kind": "subtree",
+ "parent": "4.2",
+ "nodes": {
+  "1": {
+   "name": "순문학",
+   "parent": null,
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0,
+   "desc": "신춘문예·문예지·등단작 같은 본격 소설"
+  },
+  "2": {
+   "name": "출판 장르소설",
+   "ask_name": "출판 장르소설",
+   "desc": "종이책으로 내는 장르소설"
+  },
+  "2.1": {
+   "name": "추리·미스터리·스릴러",
+   "parent": "2",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "2.2": {
+   "name": "SF",
+   "parent": "2",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "2.3": {
+   "name": "판타지",
+   "parent": "2",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "2.4": {
+   "name": "로맨스",
+   "parent": "2",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "2.5": {
+   "name": "무협",
+   "parent": "2",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "2.6": {
+   "name": "공포·호러",
+   "parent": "2",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "3": {
+   "name": "웹소설",
+   "ask_name": "웹소설",
+   "desc": "플랫폼 연재 웹소설"
+  },
+  "3.1": {
+   "name": "현대판타지",
+   "parent": "3",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "3.2": {
+   "name": "정통·퓨전 판타지",
+   "parent": "3",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "3.3": {
+   "name": "게임판타지",
+   "parent": "3",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "3.4": {
+   "name": "무협",
+   "parent": "3",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "3.5": {
+   "name": "현대 로맨스",
+   "parent": "3",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "3.6": {
+   "name": "로맨스판타지",
+   "parent": "3",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "3.7": {
+   "name": "BL·GL",
+   "parent": "3",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "3.8": {
+   "name": "미스터리·스릴러·SF",
+   "parent": "3",
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0
+  },
+  "4": {
+   "name": "아동·청소년 소설",
+   "parent": null,
+   "slots": [
+    "story"
+   ],
+   "path": null,
+   "n_docs": 0,
+   "desc": "동화·어린이·청소년 소설"
+  }
+ },
+ "slots": {
+  "story": {
+   "q": "어떤 이야기인가요? 인물이나 줄거리를 한두 줄로 알려 주세요.",
+   "req": true
+  }
+ },
+ "attributes": {
+  "audience": [
+   "아동",
+   "청소년",
+   "일반"
+  ],
+  "length": [
+   "엽편",
+   "단편",
+   "중편",
+   "장편",
+   "연재"
+  ],
+  "keyword": [
+   "회귀",
+   "빙의",
+   "환생",
+   "대체역사",
+   "게임 시스템",
+   "헌터",
+   "아카데미",
+   "계약 결혼",
+   "악역",
+   "복수",
+   "착각"
+  ]
+ },
+ "questions": {
+  "top": "어떤 소설인가요? 순문학, 출판 장르소설, 웹소설, 아동·청소년 소설 중에서요.",
+  "choose": "{names} 중 어떤 장르인가요?"
+ },
+ "rules": {
+  "max_asks_per_slot": 2
+ }
+}

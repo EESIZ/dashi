@@ -1,3 +1,6 @@
 kiwipiepy==0.22.2
 kiwipiepy_model==0.22.1
-mcp>=1.2
+mcp==2.3.0
+pypdf==6.21.4
+numpy==2.5.4
+tqdm==4.70.1
