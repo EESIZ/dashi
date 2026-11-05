@@ -1,0 +1,25 @@
+{
+  "source_checks": 224,
+  "native_boundary_checks": 18,
+  "native_regression_checks": 131,
+  "normal_valid_runs": 4,
+  "normal_delivered": 4,
+  "environment_invalid_runs": 1,
+  "controlled_recovery_runs": 2,
+  "controlled_recovery_delivered": 2,
+  "all_actual_provider_calls": 23,
+  "all_actual_tokens_including_invalid_and_controlled_runs": 102955,
+  "quality": {
+    "local_rework": {
+      "passed": 4,
+      "count": 4,
+      "natural_mean": 3.75
+    },
+    "prior_compiled": {
+      "passed": 4,
+      "count": 4,
+      "natural_mean": 4.0
+    }
+  },
+  "claim": "All four criteria passed in this small sample; naturalness mean was lower by0.25. This does not establish general quality equivalence or a new token-saving percentage."
+}

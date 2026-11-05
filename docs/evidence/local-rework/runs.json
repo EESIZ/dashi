@@ -1,0 +1,786 @@
+[
+  {
+    "run": "admin-revise-date",
+    "case_id": "admin-revise-date",
+    "controlled_bad_draft": false,
+    "status": "DELIVERED",
+    "delivered": true,
+    "reason": null,
+    "text": "수신: 총무팀\n회의는 2026. 11. 5.에 열린다.\n참석자는 자료를 확인하기 바랍니다.  끝.",
+    "artifact_hash": "46f35c4c388abefde53098a4eec3c4d9cbda013aaf2f332c05fe2520750a5ce9",
+    "usage": {
+      "calls": 3,
+      "usage_complete": true,
+      "total_tokens": 6351,
+      "input_total": 5213,
+      "output_tokens": 1138,
+      "elapsed_seconds": 24.142095565097407
+    },
+    "metrics": {
+      "checks": 2,
+      "check_reuses": 0,
+      "versions": 1,
+      "reviews": 1,
+      "rework_count": 0,
+      "attempts_remaining": 2
+    },
+    "calls": [
+      {
+        "purpose": "plan",
+        "seeded": false
+      },
+      {
+        "purpose": "repair",
+        "seeded": false
+      },
+      {
+        "purpose": "independent_review",
+        "seeded": false
+      }
+    ],
+    "stages": [
+      {
+        "event": "stage_started",
+        "id": "route"
+      },
+      {
+        "event": "stage_verified",
+        "id": "route",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "plan"
+      },
+      {
+        "event": "stage_verified",
+        "id": "plan",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "author"
+      },
+      {
+        "event": "stage_verified",
+        "id": "author",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-1"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "2e997070dee7f6738f612a7fa086825cda95a43da15a2f544b8205f2066df794",
+        "verdict": "FAIL",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-1",
+        "outcome": "FAIL"
+      },
+      {
+        "event": "stage_started",
+        "id": "repair-1"
+      },
+      {
+        "event": "stage_verified",
+        "id": "repair-1",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-2"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "46f35c4c388abefde53098a4eec3c4d9cbda013aaf2f332c05fe2520750a5ce9",
+        "verdict": "PASS",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-2",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "review"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "deliver"
+      },
+      {
+        "event": "stage_verified",
+        "id": "deliver",
+        "outcome": "accepted"
+      }
+    ]
+  },
+  {
+    "run": "essay-draft",
+    "case_id": "essay-draft",
+    "controlled_bad_draft": false,
+    "status": "BLOCKED",
+    "delivered": false,
+    "reason": "CHECKER_CHANGED",
+    "text": null,
+    "artifact_hash": null,
+    "usage": {
+      "calls": 2,
+      "usage_complete": true,
+      "total_tokens": 8486,
+      "input_total": 7378,
+      "output_tokens": 1108,
+      "elapsed_seconds": 14.197525414871052
+    },
+    "metrics": null,
+    "calls": [
+      {
+        "purpose": "plan",
+        "seeded": false
+      },
+      {
+        "purpose": "draft",
+        "seeded": false
+      }
+    ],
+    "stages": [
+      {
+        "event": "stage_started",
+        "id": "route"
+      },
+      {
+        "event": "stage_verified",
+        "id": "route",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "plan"
+      },
+      {
+        "event": "stage_verified",
+        "id": "plan",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "author"
+      }
+    ]
+  },
+  {
+    "run": "essay-draft-frozen",
+    "case_id": "essay-draft",
+    "controlled_bad_draft": false,
+    "status": "DELIVERED",
+    "delivered": true,
+    "reason": null,
+    "text": "비가 그쳤다. 창가에 앉은 내 앞, 펼쳐 둔 책 위로 빛이 들어온다. 나는 책을 바로 덮지 않고, 빛이 내려앉은 그 자리에 그대로 머문다.",
+    "artifact_hash": "484ecb5ade5a2aa4267387e19463e5f5e5eb4cc09b0b31c1f3e15720d610a3ff",
+    "usage": {
+      "calls": 3,
+      "usage_complete": true,
+      "total_tokens": 13038,
+      "input_total": 10807,
+      "output_tokens": 2231,
+      "elapsed_seconds": 34.318910479778424
+    },
+    "metrics": {
+      "checks": 1,
+      "check_reuses": 0,
+      "versions": 1,
+      "reviews": 1,
+      "rework_count": 0,
+      "attempts_remaining": 3
+    },
+    "calls": [
+      {
+        "purpose": "plan",
+        "seeded": false
+      },
+      {
+        "purpose": "draft",
+        "seeded": false
+      },
+      {
+        "purpose": "independent_review",
+        "seeded": false
+      }
+    ],
+    "stages": [
+      {
+        "event": "stage_started",
+        "id": "route"
+      },
+      {
+        "event": "stage_verified",
+        "id": "route",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "plan"
+      },
+      {
+        "event": "stage_verified",
+        "id": "plan",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "author"
+      },
+      {
+        "event": "stage_verified",
+        "id": "author",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-1"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "484ecb5ade5a2aa4267387e19463e5f5e5eb4cc09b0b31c1f3e15720d610a3ff",
+        "verdict": "PASS",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-1",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "review"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "deliver"
+      },
+      {
+        "event": "stage_verified",
+        "id": "deliver",
+        "outcome": "accepted"
+      }
+    ]
+  },
+  {
+    "run": "opinion-draft",
+    "case_id": "opinion-draft",
+    "controlled_bad_draft": false,
+    "status": "DELIVERED",
+    "delivered": true,
+    "reason": null,
+    "text": "시청은 동네 도서관의 운영 시간을 줄이겠다고 알렸지만, 그 공지에는 변경 이유가 적혀 있지 않다. 이 도서관을 이용해 온 주민들로서는 이유 없이 통보만 받아서는 왜 시간이 줄어드는지 납득하기 어렵다. 시청은 운영 시간을 바꾸는 이유를 주민들에게 설명해야 한다.",
+    "artifact_hash": "2dc6300aa2797e8880b8229a00db3bac805222907411965f1936303b2d4fc1e5",
+    "usage": {
+      "calls": 4,
+      "usage_complete": true,
+      "total_tokens": 27926,
+      "input_total": 24444,
+      "output_tokens": 3482,
+      "elapsed_seconds": 44.11939925909974
+    },
+    "metrics": {
+      "checks": 1,
+      "check_reuses": 0,
+      "versions": 1,
+      "reviews": 1,
+      "rework_count": 0,
+      "attempts_remaining": 3
+    },
+    "calls": [
+      {
+        "purpose": "plan",
+        "seeded": false
+      },
+      {
+        "purpose": "facts_first",
+        "seeded": false
+      },
+      {
+        "purpose": "draft",
+        "seeded": false
+      },
+      {
+        "purpose": "independent_review",
+        "seeded": false
+      }
+    ],
+    "stages": [
+      {
+        "event": "stage_started",
+        "id": "route"
+      },
+      {
+        "event": "stage_verified",
+        "id": "route",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "plan"
+      },
+      {
+        "event": "stage_verified",
+        "id": "plan",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "facts-first"
+      },
+      {
+        "event": "stage_verified",
+        "id": "facts-first",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "author"
+      },
+      {
+        "event": "stage_verified",
+        "id": "author",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-1"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "2dc6300aa2797e8880b8229a00db3bac805222907411965f1936303b2d4fc1e5",
+        "verdict": "PASS",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-1",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "review"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "deliver"
+      },
+      {
+        "event": "stage_verified",
+        "id": "deliver",
+        "outcome": "accepted"
+      }
+    ]
+  },
+  {
+    "run": "opinion-revise-recap",
+    "case_id": "opinion-revise-recap",
+    "controlled_bad_draft": false,
+    "status": "DELIVERED",
+    "delivered": true,
+    "reason": null,
+    "text": "시청은 도서관 운영 시간을 줄이겠다고 알렸다. 주민에게는 이용 시간 변경의 이유를 설명해야 한다.",
+    "artifact_hash": "94a1edd52f01045c86918f593ab5242bc3b05ca998cbd76e4fe3a4cde7031c54",
+    "usage": {
+      "calls": 3,
+      "usage_complete": true,
+      "total_tokens": 19798,
+      "input_total": 17379,
+      "output_tokens": 2419,
+      "elapsed_seconds": 29.494973780121654
+    },
+    "metrics": {
+      "checks": 1,
+      "check_reuses": 0,
+      "versions": 1,
+      "reviews": 1,
+      "rework_count": 0,
+      "attempts_remaining": 3
+    },
+    "calls": [
+      {
+        "purpose": "plan",
+        "seeded": false
+      },
+      {
+        "purpose": "initial_edit",
+        "seeded": false
+      },
+      {
+        "purpose": "independent_review",
+        "seeded": false
+      }
+    ],
+    "stages": [
+      {
+        "event": "stage_started",
+        "id": "route"
+      },
+      {
+        "event": "stage_verified",
+        "id": "route",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "plan"
+      },
+      {
+        "event": "stage_verified",
+        "id": "plan",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "author"
+      },
+      {
+        "event": "stage_verified",
+        "id": "author",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-1"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "94a1edd52f01045c86918f593ab5242bc3b05ca998cbd76e4fe3a4cde7031c54",
+        "verdict": "PASS",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-1",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "review"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "deliver"
+      },
+      {
+        "event": "stage_verified",
+        "id": "deliver",
+        "outcome": "accepted"
+      }
+    ]
+  },
+  {
+    "run": "seeded-essay",
+    "case_id": "essay-draft",
+    "controlled_bad_draft": true,
+    "status": "DELIVERED",
+    "delivered": true,
+    "reason": null,
+    "text": "비가 그쳤다. 나는 창가에 앉아 펼친 책 위로 들어오는 빛을 본다. 책을 바로 덮지 않고 그 자리에 머문다. ",
+    "artifact_hash": "3da28919c234af447008b228d0e4671b0af5e5b33bfed3f9e064e08050ec83e4",
+    "usage": {
+      "calls": 4,
+      "usage_complete": true,
+      "total_tokens": 13778,
+      "input_total": 11489,
+      "output_tokens": 2289,
+      "elapsed_seconds": 34.21162929898128
+    },
+    "metrics": {
+      "checks": 2,
+      "check_reuses": 0,
+      "versions": 2,
+      "reviews": 2,
+      "rework_count": 1,
+      "attempts_remaining": 2
+    },
+    "calls": [
+      {
+        "purpose": "plan",
+        "seeded": false
+      },
+      {
+        "purpose": "draft",
+        "seeded": true
+      },
+      {
+        "purpose": "independent_review",
+        "seeded": false
+      },
+      {
+        "purpose": "review_repair",
+        "seeded": false
+      },
+      {
+        "purpose": "independent_review",
+        "seeded": false
+      }
+    ],
+    "stages": [
+      {
+        "event": "stage_started",
+        "id": "route"
+      },
+      {
+        "event": "stage_verified",
+        "id": "route",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "plan"
+      },
+      {
+        "event": "stage_verified",
+        "id": "plan",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "author"
+      },
+      {
+        "event": "stage_verified",
+        "id": "author",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-1"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "e8d6c3277f0ddab8652820569e7f506385fb4a3b1df42569b005c3ade8a49b09",
+        "verdict": "PASS",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-1",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "review"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review",
+        "outcome": "FAIL"
+      },
+      {
+        "event": "stage_started",
+        "id": "review-repair-1"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review-repair-1",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-2"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "3da28919c234af447008b228d0e4671b0af5e5b33bfed3f9e064e08050ec83e4",
+        "verdict": "PASS",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-2",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "review-2"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review-2",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "deliver"
+      },
+      {
+        "event": "stage_verified",
+        "id": "deliver",
+        "outcome": "accepted"
+      }
+    ]
+  },
+  {
+    "run": "seeded-essay-final",
+    "case_id": "essay-draft",
+    "controlled_bad_draft": true,
+    "status": "DELIVERED",
+    "delivered": true,
+    "reason": null,
+    "text": "비가 그쳤다. 나는 창가에 앉아 펼친 책 위로 들어오는 빛을 본다. 책을 바로 덮지 않고 그 자리에 머문다. ",
+    "artifact_hash": "3da28919c234af447008b228d0e4671b0af5e5b33bfed3f9e064e08050ec83e4",
+    "usage": {
+      "calls": 4,
+      "usage_complete": true,
+      "total_tokens": 13578,
+      "input_total": 11497,
+      "output_tokens": 2081,
+      "elapsed_seconds": 29.488822572864592
+    },
+    "metrics": {
+      "checks": 2,
+      "check_reuses": 0,
+      "versions": 2,
+      "reviews": 2,
+      "rework_count": 1,
+      "attempts_remaining": 2
+    },
+    "calls": [
+      {
+        "purpose": "plan",
+        "seeded": false
+      },
+      {
+        "purpose": "draft",
+        "seeded": true
+      },
+      {
+        "purpose": "independent_review",
+        "seeded": false
+      },
+      {
+        "purpose": "review_repair",
+        "seeded": false
+      },
+      {
+        "purpose": "independent_review",
+        "seeded": false
+      }
+    ],
+    "stages": [
+      {
+        "event": "stage_started",
+        "id": "route"
+      },
+      {
+        "event": "stage_verified",
+        "id": "route",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "plan"
+      },
+      {
+        "event": "stage_verified",
+        "id": "plan",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "author"
+      },
+      {
+        "event": "stage_verified",
+        "id": "author",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-1"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "e8d6c3277f0ddab8652820569e7f506385fb4a3b1df42569b005c3ade8a49b09",
+        "verdict": "PASS",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-1",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "review"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review",
+        "outcome": "FAIL"
+      },
+      {
+        "event": "stage_started",
+        "id": "review-repair-1"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review-repair-1",
+        "outcome": "accepted"
+      },
+      {
+        "event": "stage_started",
+        "id": "check-2"
+      },
+      {
+        "event": "verify",
+        "artifact_hash": "3da28919c234af447008b228d0e4671b0af5e5b33bfed3f9e064e08050ec83e4",
+        "verdict": "PASS",
+        "reused": false
+      },
+      {
+        "event": "stage_verified",
+        "id": "check-2",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "review-2"
+      },
+      {
+        "event": "stage_verified",
+        "id": "review-2",
+        "outcome": "PASS"
+      },
+      {
+        "event": "stage_started",
+        "id": "deliver"
+      },
+      {
+        "event": "stage_verified",
+        "id": "deliver",
+        "outcome": "accepted"
+      }
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "blind_id": "L01",
+    "facts_preserved": true,
+    "request_met": true,
+    "lexical_scope": true,
+    "natural": true,
+    "natural_score": 4,
+    "passed": true,
+    "reasons": [
+      "지정한 마지막 요약만 삭제했고 나머지 두 문장의 어휘와 사실·설명 요구를 그대로 보존했다. 짧은 논설로 자연스럽게 이어진다."
+    ]
+  },
+  {
+    "blind_id": "L02",
+    "facts_preserved": true,
+    "request_met": true,
+    "lexical_scope": true,
+    "natural": true,
+    "natural_score": 4,
+    "passed": true,
+    "reasons": [
+      "날짜 값을 유지하면서 지정한 날짜 표기만 교정했다. 수신·나머지 문장·줄바꿈·끝 표시는 원문대로 보존했다."
+    ]
+  },
+  {
+    "blind_id": "L03",
+    "facts_preserved": true,
+    "request_met": true,
+    "lexical_scope": true,
+    "natural": true,
+    "natural_score": 3,
+    "passed": true,
+    "reasons": [
+      "자료의 세 사실을 보존하고 세 문장으로 이유 설명을 촉구했다. 납득하기 어렵다는 문장은 근거에 따른 논평으로 읽히며 새 수치·인용을 추가하지 않았다. 둘째 문장의 주민들로서는와 받아서는이 겹치고 이유 표현도 반복돼 호흡이 다소 늘어지지만 의미 전달과 사용에는 문제가 없다."
+    ]
+  },
+  {
+    "blind_id": "L04",
+    "facts_preserved": true,
+    "request_met": true,
+    "lexical_scope": true,
+    "natural": true,
+    "natural_score": 4,
+    "passed": true,
+    "reasons": [
+      "비가 그친 창가·펼친 책·빛·책을 덮지 않고 머무는 장면을 세 문장으로 유지했다. 새로운 인물·물건·대사나 교훈을 넣지 않았고, 내려다보는 시선은 주어진 장면을 보여 주는 서술로 자연스럽다."
+    ]
+  },
+  {
+    "blind_id": "L05",
+    "facts_preserved": true,
+    "request_met": true,
+    "lexical_scope": true,
+    "natural": true,
+    "natural_score": 4,
+    "passed": true,
+    "reasons": [
+      "날짜 값은 같고 표기만 2026. 11. 5.로 바뀌었다. 요청에서 보존하라고 한 다른 문장과 형식을 유지했다."
+    ]
+  },
+  {
+    "blind_id": "L06",
+    "facts_preserved": true,
+    "request_met": true,
+    "lexical_scope": true,
+    "natural": true,
+    "natural_score": 4,
+    "passed": true,
+    "reasons": [
+      "운영 시간 단축 공지·변경 이유 누락·주민의 도서관 이용을 보존했다. 판단 근거가 필요하다는 논평에서 설명 요구로 이어지는 연결이 자연스럽고, 세 문장 및 금지 표현·수치·인용 제한을 지켰다."
+    ]
+  },
+  {
+    "blind_id": "L07",
+    "facts_preserved": true,
+    "request_met": true,
+    "lexical_scope": true,
+    "natural": true,
+    "natural_score": 4,
+    "passed": true,
+    "reasons": [
+      "요청한 중복 요약 한 문장만 없어졌고 보존 대상 두 문장은 그대로다. 사실과 시청의 설명을 촉구하는 의도가 유지된다."
+    ]
+  },
+  {
+    "blind_id": "L08",
+    "facts_preserved": true,
+    "request_met": true,
+    "lexical_scope": true,
+    "natural": true,
+    "natural_score": 4,
+    "passed": true,
+    "reasons": [
+      "제공된 창가·책·빛·머무는 행동으로만 세 문장을 구성했다. 빛이 내려앉았다는 표현은 기존 빛의 묘사이며 별도 사건이나 교훈을 추가하지 않는다. 쉼표로 느려지는 호흡이 요청한 정서와 맞는다."
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "blind_id": "L01",
+    "condition": "local_rework",
+    "case_id": "opinion-revise-recap"
+  },
+  {
+    "blind_id": "L02",
+    "condition": "local_rework",
+    "case_id": "admin-revise-date"
+  },
+  {
+    "blind_id": "L03",
+    "condition": "local_rework",
+    "case_id": "opinion-draft"
+  },
+  {
+    "blind_id": "L04",
+    "condition": "prior_compiled",
+    "case_id": "essay-draft"
+  },
+  {
+    "blind_id": "L05",
+    "condition": "prior_compiled",
+    "case_id": "admin-revise-date"
+  },
+  {
+    "blind_id": "L06",
+    "condition": "prior_compiled",
+    "case_id": "opinion-draft"
+  },
+  {
+    "blind_id": "L07",
+    "condition": "prior_compiled",
+    "case_id": "opinion-revise-recap"
+  },
+  {
+    "blind_id": "L08",
+    "condition": "local_rework",
+    "case_id": "essay-draft"
+  }
+]

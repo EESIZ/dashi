@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "model": "claude-opus-5-5",
+  "normal_cases": [
+    "opinion-draft",
+    "essay-draft",
+    "opinion-revise-recap",
+    "admin-revise-date"
+  ],
+  "repetitions": 1,
+  "baseline": "prior release fixed pairedoutputs retained in dashi-publish-20261106/private/docs/evidence",
+  "comparison": "same fixedfixtures and blindedrubric; historicalbaseline, not a fresh randompaired tokenexperiment",
+  "extra_recovery_case": "essay-draft, declared seeded badinitialdraft; plan/review/localrepair/finalreview use actualmodel",
+  "retry_failed_cases": false,
+  "acceptance": [
+    "all firststages calledonce",
+    "valid localizedrepair beforefreshcheck/review",
+    "no candidateleak onfailure",
+    "global4checkbudget",
+    "independent blindedquality of deliverables"
+  ],
+  "tokens": "record all actual provider calls including failures/reviews; no claimed old-newpercentage"
+}

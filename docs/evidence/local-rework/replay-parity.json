@@ -1,0 +1,273 @@
+{
+  "accepted": true,
+  "method": "same recorded actual JSON responses replayed through isolated prior/final Python source runtimes and actual Dashi checks",
+  "normal_cases": 4,
+  "replay_runs": 8,
+  "model_calls": 0,
+  "actual_checks": 10,
+  "replayed_responses": 26,
+  "same_initial_author_systems_and_normalized_payloads": true,
+  "same_final_utf8_and_check_counts": true,
+  "pairs": [
+    {
+      "case_id": "opinion-draft",
+      "recorded_result_sha256": "3ae2ebf9cc1cf450db5e7821d03f1009aef20a859b59be8c5f1f5288b7c6dda5",
+      "artifact_hash": "2dc6300aa2797e8880b8229a00db3bac805222907411965f1936303b2d4fc1e5",
+      "exact_final_utf8_equal": true,
+      "both_match_recorded_delivered_bytes": true,
+      "checks_each": 1,
+      "reviews_each": 1,
+      "calls_each": 4,
+      "calls": [
+        {
+          "purpose": "plan",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "e035cea1c633f9cd9143632b7438808cfe0609e32fce32d993a79e9571b51d11",
+          "recorded_response_sha256": "74797a5048c99ea90c11cb5c4a1310285b7eeff8fac81754dc4e1fc487b8d22d",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "facts_first",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "d85fae39fe892101c40d204ca9b5ff824aa0396ce5a8b2dad5db0f1a1e7f7d93",
+          "recorded_response_sha256": "e51c4b3f7015533e208eaac28adbf89cad72fb2591b412b8af288d5e8e6b18de",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "draft",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "cadd1b7d497263b49308571f28c5eb27b21f2a40d4dae43019cf5f210713a4fd",
+          "recorded_response_sha256": "09477d3af407e4a1f2043331be846ab81afdbd54d42c848bd2fa09fe41ca8acf",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "independent_review",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": false,
+          "old_system_sha256": "f3fca88dd3bcb0071f2a2d4e2709275cd7d5c8beacf4121cb118eb2b78fc3495",
+          "final_system_sha256": "8d0b79a52a0e41fc3014bd1e91803fb46a925cf95bdcbbe736ad091a375fc068",
+          "payload_sha256": "a387c560d9cd4a636aff499891e4e4711184a75818630ea2b5b7984a6f4f9143",
+          "recorded_response_sha256": "8db1628b1e02d1bca85389e8925d146897d56ce7bae634ee6b334855fcb32cff",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": true
+        }
+      ]
+    },
+    {
+      "case_id": "essay-draft",
+      "recorded_result_sha256": "5bf1d6ef953242e646ad0a936a9088f8ea4f6b208c043f5e516e6ad94d36b6a1",
+      "artifact_hash": "484ecb5ade5a2aa4267387e19463e5f5e5eb4cc09b0b31c1f3e15720d610a3ff",
+      "exact_final_utf8_equal": true,
+      "both_match_recorded_delivered_bytes": true,
+      "checks_each": 1,
+      "reviews_each": 1,
+      "calls_each": 3,
+      "calls": [
+        {
+          "purpose": "plan",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "bbe0dbdd643c063b1b54207761f9cf8573f1c552ed95bb64c9eed04480dd9943",
+          "recorded_response_sha256": "ddd9f0cd34daf000006ecf7ff7d44b8c0fbdeb9ce49fcf5341b5719a9a76496f",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "draft",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "ab21252a8c53a98a4f5fc1486df5b101707ee063cca15bab48cb2072f7eea85a",
+          "recorded_response_sha256": "7160701f589d55cdc63219834a7342c8c974ca51e6fcd5006abacca5ce760cb8",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "independent_review",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": false,
+          "old_system_sha256": "f3fca88dd3bcb0071f2a2d4e2709275cd7d5c8beacf4121cb118eb2b78fc3495",
+          "final_system_sha256": "8d0b79a52a0e41fc3014bd1e91803fb46a925cf95bdcbbe736ad091a375fc068",
+          "payload_sha256": "3ff7790e1dfc55b6eb5a1964ed7a4ceae07513457f5e21c6c420490e216ffe6e",
+          "recorded_response_sha256": "b6d0254f4ed52e1efca22ca7eab5d25fa864fd2723892150b01facead10b3436",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": true
+        }
+      ]
+    },
+    {
+      "case_id": "opinion-revise-recap",
+      "recorded_result_sha256": "367dde3c89240ef6c91c21f164d9b0143ba6605d9a72600c9d2b655b317b7db1",
+      "artifact_hash": "94a1edd52f01045c86918f593ab5242bc3b05ca998cbd76e4fe3a4cde7031c54",
+      "exact_final_utf8_equal": true,
+      "both_match_recorded_delivered_bytes": true,
+      "checks_each": 1,
+      "reviews_each": 1,
+      "calls_each": 3,
+      "calls": [
+        {
+          "purpose": "plan",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "fa007cfb87370684a885e0798d72121955c28d4043dfc28c4f0c79d4a06a7117",
+          "recorded_response_sha256": "844bbece274ace7c82191c93937a3f5ce19d017bd049ffd3a349972be003192c",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "initial_edit",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "2ddea50dcc1072b9535e011336f17f58dbcfe9417b5a017a5bf40b1aa8e8c511",
+          "recorded_response_sha256": "0b3639c61c3e4fc5c54778807c3f146df94b5e0f6a99a29a378abfd03dd64f16",
+          "remapped_capabilities": {
+            "old": 1,
+            "final": 1
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "independent_review",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": false,
+          "old_system_sha256": "f3fca88dd3bcb0071f2a2d4e2709275cd7d5c8beacf4121cb118eb2b78fc3495",
+          "final_system_sha256": "8d0b79a52a0e41fc3014bd1e91803fb46a925cf95bdcbbe736ad091a375fc068",
+          "payload_sha256": "67a8f493a0040255eb34dc12c135fe9037c5d7939e7eea3a7346839841bf14b6",
+          "recorded_response_sha256": "079dd2ca93b60c3d11e28d761dbf0a8a33802d42ce7883d89a808480feeda45a",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": true
+        }
+      ]
+    },
+    {
+      "case_id": "admin-revise-date",
+      "recorded_result_sha256": "d4a39a1b1b4ffe80de80bdb052b99bff82a79b86a0ef4547efa11baff0333793",
+      "artifact_hash": "46f35c4c388abefde53098a4eec3c4d9cbda013aaf2f332c05fe2520750a5ce9",
+      "exact_final_utf8_equal": true,
+      "both_match_recorded_delivered_bytes": true,
+      "checks_each": 2,
+      "reviews_each": 1,
+      "calls_each": 3,
+      "calls": [
+        {
+          "purpose": "plan",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "94dd3a78931533fd0f2b3c9a39de51d50438d300b2ce4ec8b26919273f87112a",
+          "recorded_response_sha256": "ff80e8c2bd626858bc7ce2c515db7da77b17b9208f64ea541d215c1f22b6deb1",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "repair",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": true,
+          "old_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "final_system_sha256": "0336ed55ad711bc41c68e6d559ee2a2bb3c509d6ffda6f6fd6fa9c6c685ecd6e",
+          "payload_sha256": "34f8cd2aa52417abc9386110d5019b37edd208226917c878987ccb8a25d048ac",
+          "recorded_response_sha256": "5fbd304a0454954753adf52f7ff2604a96d0ffed19f7771196526af289b406e1",
+          "remapped_capabilities": {
+            "old": 1,
+            "final": 1
+          },
+          "omitted_old_positive_empty_findings": false
+        },
+        {
+          "purpose": "independent_review",
+          "payload_equal_after_capability_id_normalization": true,
+          "system_equal": false,
+          "old_system_sha256": "f3fca88dd3bcb0071f2a2d4e2709275cd7d5c8beacf4121cb118eb2b78fc3495",
+          "final_system_sha256": "8d0b79a52a0e41fc3014bd1e91803fb46a925cf95bdcbbe736ad091a375fc068",
+          "payload_sha256": "05c9275f482b3ddd6bf22e11f954320e889c60e5e25a0c88e815bfd0b235797d",
+          "recorded_response_sha256": "79ad9c631d417cff3e13e71de3f6cfe651676667757dbfef7550d59045a55eab",
+          "remapped_capabilities": {
+            "old": 0,
+            "final": 0
+          },
+          "omitted_old_positive_empty_findings": true
+        }
+      ]
+    }
+  ],
+  "source_modules": {
+    "old": {
+      "dashi_guard/__init__.py": "674b900453b2e0853a98a191da1d147b98f0307b6d390f4bc0c935a0cfe5d6a8",
+      "dashi_guard/__main__.py": "d5cfa5f876ff683a0d16b5646d0d8046cc1085dd0c2d898b9813d5429bda6824",
+      "dashi_guard/adapters.py": "33c8884ca64a9b92c404d903d8c045706315db2dc74d035fe00884694a53f396",
+      "dashi_guard/core.py": "b29f643a0aeb91ebdee0de1900a5b3a4e85e7c46f4973d4b34b7bd6cb84218f8",
+      "dashi_guard/flow.py": "5a2762cf827ff09658e9027dc51757c9c5a225ffc283a0abe5824e3a45b5e465",
+      "dashi_guard/provider.py": "b8c74e8f16c541671520eafac723163b88895b2bda06d20adf372d5ac1a500cc",
+      "dashi_guard/runtime.py": "00a6b5ee809a00a91360c1c5d55aee85df4b4a8053c0a843d5218d5626e9bd5d",
+      "dashi_guard/scheduler.py": "93bf6e2f1811e6fb5acb8175b11f90f4a51ecb0996e2457930d4044de7e600c4"
+    },
+    "final": {
+      "dashi_guard/__init__.py": "674b900453b2e0853a98a191da1d147b98f0307b6d390f4bc0c935a0cfe5d6a8",
+      "dashi_guard/__main__.py": "abe7c5d2b8fe4e9654929a24101e4bc1c5d0e0b0f678f292f198d2f17b8a2a01",
+      "dashi_guard/adapters.py": "33c8884ca64a9b92c404d903d8c045706315db2dc74d035fe00884694a53f396",
+      "dashi_guard/core.py": "98a082175b0eb19d682ead75b5b303e6e67b80da3393031b5a9c54e30ff9f7b1",
+      "dashi_guard/flow.py": "1018ce57c444d951cf8fe825dcb5a8a5662f6231e633fc7d46cba1ac42f54280",
+      "dashi_guard/provider.py": "b8c74e8f16c541671520eafac723163b88895b2bda06d20adf372d5ac1a500cc",
+      "dashi_guard/runtime.py": "217d738fc5f94c02e3a678c17034ec286f759b43dee6d4c699fefe547fef69b4",
+      "dashi_guard/scheduler.py": "93bf6e2f1811e6fb5acb8175b11f90f4a51ecb0996e2457930d4044de7e600c4"
+    }
+  },
+  "limitations": [
+    "This reuses four recorded outputs; it does not generate a new independent quality sample or prove quality equivalence.",
+    "Reviewer system instructions changed: final adds bounded localized findings. Empty findings is omitted only to satisfy the old positive-review schema.",
+    "The original live call log stores payload/response, not the system string; system equality here compares the two runtimes when re-emitting these same requests.",
+    "Random capability IDs are mapped only after exact semantic basis correspondence; all other author payload content must match.",
+    "Historical versus new blind scores remain 4.0 versus 3.75; this test neither revises those scores nor attributes their difference to a quantified cause.",
+    "No rejection/rework path is exercised here; those have separate tests and retained live recovery evidence."
+  ]
+}
