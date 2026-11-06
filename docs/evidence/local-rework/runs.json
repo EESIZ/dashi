@@ -6,7 +6,6 @@
     "status": "DELIVERED",
     "delivered": true,
     "reason": null,
-    "text": "수신: 총무팀\n회의는 2026. 11. 5.에 열린다.\n참석자는 자료를 확인하기 바랍니다.  끝.",
     "artifact_hash": "46f35c4c388abefde53098a4eec3c4d9cbda013aaf2f332c05fe2520750a5ce9",
     "usage": {
       "calls": 3,
@@ -132,7 +131,6 @@
     "status": "BLOCKED",
     "delivered": false,
     "reason": "CHECKER_CHANGED",
-    "text": null,
     "artifact_hash": null,
     "usage": {
       "calls": 2,
@@ -185,7 +183,6 @@
     "status": "DELIVERED",
     "delivered": true,
     "reason": null,
-    "text": "비가 그쳤다. 창가에 앉은 내 앞, 펼쳐 둔 책 위로 빛이 들어온다. 나는 책을 바로 덮지 않고, 빛이 내려앉은 그 자리에 그대로 머문다.",
     "artifact_hash": "484ecb5ade5a2aa4267387e19463e5f5e5eb4cc09b0b31c1f3e15720d610a3ff",
     "usage": {
       "calls": 3,
@@ -287,7 +284,6 @@
     "status": "DELIVERED",
     "delivered": true,
     "reason": null,
-    "text": "시청은 동네 도서관의 운영 시간을 줄이겠다고 알렸지만, 그 공지에는 변경 이유가 적혀 있지 않다. 이 도서관을 이용해 온 주민들로서는 이유 없이 통보만 받아서는 왜 시간이 줄어드는지 납득하기 어렵다. 시청은 운영 시간을 바꾸는 이유를 주민들에게 설명해야 한다.",
     "artifact_hash": "2dc6300aa2797e8880b8229a00db3bac805222907411965f1936303b2d4fc1e5",
     "usage": {
       "calls": 4,
@@ -402,7 +398,6 @@
     "status": "DELIVERED",
     "delivered": true,
     "reason": null,
-    "text": "시청은 도서관 운영 시간을 줄이겠다고 알렸다. 주민에게는 이용 시간 변경의 이유를 설명해야 한다.",
     "artifact_hash": "94a1edd52f01045c86918f593ab5242bc3b05ca998cbd76e4fe3a4cde7031c54",
     "usage": {
       "calls": 3,
@@ -504,7 +499,6 @@
     "status": "DELIVERED",
     "delivered": true,
     "reason": null,
-    "text": "비가 그쳤다. 나는 창가에 앉아 펼친 책 위로 들어오는 빛을 본다. 책을 바로 덮지 않고 그 자리에 머문다. ",
     "artifact_hash": "3da28919c234af447008b228d0e4671b0af5e5b33bfed3f9e064e08050ec83e4",
     "usage": {
       "calls": 4,
@@ -647,7 +641,6 @@
     "status": "DELIVERED",
     "delivered": true,
     "reason": null,
-    "text": "비가 그쳤다. 나는 창가에 앉아 펼친 책 위로 들어오는 빛을 본다. 책을 바로 덮지 않고 그 자리에 머문다. ",
     "artifact_hash": "3da28919c234af447008b228d0e4671b0af5e5b33bfed3f9e064e08050ec83e4",
     "usage": {
       "calls": 4,
