@@ -1,5 +1,5 @@
 # 배포 검증 자료
 
-이번 품질 반려의 국소 수정 검증은 [local-rework](local-rework/README.md)에 있다. 고정 합성 과제의 성공·차단·사용량, 블라인드 평가와 동일 응답 재실행 결과를 공개한다.
+품질 반려의 국소 수정 검증은 [local-rework](local-rework/README.md)에 있다. 고정 합성 과제의 성공·차단·사용량, 기준별 품질 판정·점수, 동일 응답 재실행의 해시와 일치 판정을 공개한다. 작성 요청·원문·초안·완성 본문·제공자 응답과 자유 서술 평가 사유는 포함하지 않는다. 합성 자료도 예외가 아니다.
 
-최초 컴파일 배포의 상세 기록은 비공개 소스 저장소의 [검증 자료](https://github.com/EESIZ/dashi_naked/tree/main/docs/evidence)에 보관한다. 해당 저장소의 접근 권한이 필요하다. 공개 요약은 [배포 문서](../RELEASE.md)에 있다.
+최초 컴파일 배포의 상세 수치와 판정은 비공개 소스 저장소의 [검증 기록](https://github.com/EESIZ/dashi_naked/tree/main/docs/evidence)에 있다. 해당 저장소도 작성 본문은 보관하지 않는다. 원본 증거는 두 GitHub 저장소 밖의 접근 제한된 비공개 보관소에 보존한다. 공개 요약은 [배포 문서](../RELEASE.md)에 있다.
