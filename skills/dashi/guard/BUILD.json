@@ -11,7 +11,7 @@
   "sources": {
     "dashi_guard/__init__.py": "674b900453b2e0853a98a191da1d147b98f0307b6d390f4bc0c935a0cfe5d6a8",
     "dashi_guard/__main__.py": "d34cc43ce88dbd20d9b3f1149b08130e296bd86464eb49b3e6ca484f497d143a",
-    "dashi_guard/adapters.py": "86a8ab8b1f9140ce8d06c852e17ce394c494e532eeea827b242ded3510b47002",
+    "dashi_guard/adapters.py": "d47bb04177ee8064f561bf2b1e00206114f73a89fe3374a577489a55cdd18156",
     "dashi_guard/checks.py": "36d6824ec85fb6c0da95278bae73ecf5c5803d0a693af026d30898f0ee3323ac",
     "dashi_guard/core.py": "288f6ea78c3d6c57f2bea651cb12e59d24d0e8b79b3001e9af886ae3fb581b4d",
     "dashi_guard/flow.py": "1018ce57c444d951cf8fe825dcb5a8a5662f6231e633fc7d46cba1ac42f54280",
@@ -32,7 +32,7 @@
     "dashi_guard/specs.py": "3475ef707cc0442307dd383d0dcfaa12889f582193a6c34a94c12cf13e878ff9",
     "host/__init__.py": "3b8f613bb44316a0ed1dba3d0f750e6785acf3d0f4030a7591d7c2c3ce789392",
     "host/cli.py": "0222e43d0a65b305a14e63f43f81d297ed901651a4e4169b928f8d08c7126d4e",
-    "host/mcp_server.py": "e5a91c55a7ce5eb4583248317adc435f55cdf6276d8f8963c56988280fd9501e",
+    "host/mcp_server.py": "a8dfb80c11c7ba6465eac2e1e278c859ae3cf006dcb6f6d6fbfca884cd12bc32",
     "baseline/SKILL.md": "b15ba84765235edd6e5794644ab1dabef3b6e1b5615625f4079b36b9aaf42d27",
     "baseline/data/lit_methods.json": "857af4852fb0f9129137ddfe590df0bf3c7679c373fc22980a8576635c521fb3",
     "baseline/essay/SKILL.md": "d4dde7242a354cc528ab46383d933661f252c2be00eb6df0ebda8dd94865ec4f",
@@ -98,7 +98,7 @@
     "dashi_guard/__init__.cpython-312-x86_64-linux-gnu.so": "47c18590dee3ae405dcee4621465ab3a7a27ffb71fab7da777e0ce2173f0e4e8",
     "dashi_guard/__main__.cpython-312-x86_64-linux-gnu.so": "ed3778f66bcd4af463f8549541b3f1ba106df599c385269d7ade9ccc5a1e92d6",
     "dashi_guard/_baseline_vault.cpython-312-x86_64-linux-gnu.so": "aab77bc6378564b8a9946ebcfd966c9d1f16752912ff485c4a68dc8d019e1c9e",
-    "dashi_guard/adapters.cpython-312-x86_64-linux-gnu.so": "f1fe7e152eab1c1477403e3ad60bb87845713397634d9b077447c761ebb2fe06",
+    "dashi_guard/adapters.cpython-312-x86_64-linux-gnu.so": "6846f7261821d7be41609e4f7359e2b3088b0d4ddc3045eef6681026aeb695bf",
     "dashi_guard/checks.cpython-312-x86_64-linux-gnu.so": "de9ec2bc85cc98c9d572c2ed0fdb294feacf80941859c4d43215acdae257813f",
     "dashi_guard/core.cpython-312-x86_64-linux-gnu.so": "7298a5ddfcfd295ca5a66942e47efd9220b1295075edbf4525ddc9a142320ace",
     "dashi_guard/flow.cpython-312-x86_64-linux-gnu.so": "db8d1167cf0d4658022b8b9a024d7df8a53fb58c5bc8f87ab0754671d9ff2014",
@@ -119,6 +119,6 @@
     "dashi_guard/specs.cpython-312-x86_64-linux-gnu.so": "ed0a49b7487f8afce7eb146d85ab2a617ca10e729288ffed8805ee874c8e8dea",
     "host/__init__.cpython-312-x86_64-linux-gnu.so": "05d100c4411c24527321a5df222e639a6c5bc8304f75ab074586d359dfddd2df",
     "host/cli.cpython-312-x86_64-linux-gnu.so": "96a8e0006928b56c5b8db256a4a6349e00ce207185508bd067ae63fcd59b8b23",
-    "host/mcp_server.cpython-312-x86_64-linux-gnu.so": "cfc7ec0b2bf008cdacd7bf0057935c368075cebca06e5b7cb71efaa284095406"
+    "host/mcp_server.cpython-312-x86_64-linux-gnu.so": "486713713160f5a78e7d1edd3555b0e3f9f809a84ab00dd4abef8ca0dec7fb3e"
   }
 }

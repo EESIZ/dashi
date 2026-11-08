@@ -156,11 +156,27 @@ sh ~/dashi/skills/dashi/install.sh
 claude mcp add --scope user dashi -- ~/dashi/skills/dashi/.venv/bin/python ~/dashi/skills/dashi/scripts/dashi.py
 ```
 
-dashi를 실행하려면 다음 환경이 필요합니다.
+dashi를 실행하려면 다음 환경이 필요합니다. Windows는 아래 WSL 방법을 씁니다.
 
 - Linux x86_64
 - Python 3.12
 - uv
+
+### Windows
+
+Windows에서는 WSL(Windows 안의 리눅스) 안에서 dashi를 실행하고, Windows의 Claude Code나 Claude Desktop이 `wsl.exe`를 거쳐 접속합니다.
+
+1. WSL이 없으면 관리자 PowerShell에서 `wsl --install -d Ubuntu`를 실행하고 재부팅합니다.
+2. WSL을 열고 uv를 설치합니다: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+3. 저장소를 Windows에 받은 뒤 PowerShell에서 실행합니다.
+
+```powershell
+git clone https://github.com/EESIZ/dashi $HOME\dashi
+powershell -ExecutionPolicy Bypass -File $HOME\dashi\skills\dashi\install-windows.ps1
+# Claude Desktop에도 등록하려면 -Desktop, 배포판을 고르려면 -Distro Ubuntu
+```
+
+스크립트는 스킬을 WSL의 `~/.local/share/dashi-skill`에 복사해 설치하고, Windows Claude Code에 MCP `dashi`를 등록합니다. `-Desktop`을 주면 Claude Desktop 설정에도 추가하며 기존 설정은 `.bak`으로 남깁니다. 작성 기능(compose)은 WSL 안의 Claude CLI를 쓰므로, WSL에서 Claude Code를 설치하고 한 번 로그인해야 합니다. 검사 도구는 로그인 없이 동작합니다. ARM Windows는 지원하지 않습니다.
 
 dashi의 핵심 구현은 `skills/dashi/scripts/`와 `skills/dashi/guard/`에 들어 있는 컴파일된 확장 모듈로 배포됩니다. 설치할 때 Python 원본을 내려받아 빌드하지 않습니다. 다른 운영체제, 다른 CPU, 다른 Python 버전용 바이너리는 제공하지 않으므로 위 환경에서만 dashi를 쓸 수 있습니다.
 
@@ -273,7 +289,7 @@ dashi는 글 종류마다 기준과 검사를 따로 두고, 그 기준과 검�
 
 `essay_example`의 수집 원문 말뭉치는 공개 저장소, 비공개 저장소, 컴파일 배포본 어디에도 들어 있지 않습니다. 사용자가 원문을 따로 준비하지 않으면 `reference_not_distributed`가 반환됩니다. 통제 작성에서는 `essay_example`의 예문 원문을 쓰지 않습니다.
 
-dashi는 문학 전체를 대상으로 한 기준 분포를 제공하지 않습니다. 시, 소설, 희곡을 작성하는 경로도 없습니다.
+dashi는 문학 전체를 대상으로 한 기준 분포를 제공하지 않습니다. 시, 소설, 희곡, 일기, 감상문은 전용 경로가 생기기 전까지 수필 경로로 작성합니다. 이때는 수필의 절차와 검사가 적용됩니다.
 
 법률문서는 전용 절차를 따릅니다. 법률문서는 `compose`의 자동 전달 대상에서 빠집니다.
 
