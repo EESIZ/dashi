@@ -55,20 +55,87 @@
  },
  "settings": {
   "use_note": "settings는 이 이야기의 설정집이다. 인물·관계·사건·세계의 규칙은 설정집을 따른다.",
-  "task": "승인된 본문과 정리된 자료로 다음 화를 쓸 때 참고할 설정집을 만든다. 본문과 자료에 나온 것만 적는다. fields에 적힌 키만 가진 JSON 객체를 반환한다.",
-  "fields": {
-   "characters": "인물. 항목마다 {\"name\":이름,\"role\":이야기에서 맡은 자리,\"traits\":성격·말버릇·겉모습,\"relations\":다른 인물과의 관계}.",
-   "world": "세계와 배경의 규칙. 장소, 시대, 용어의 뜻을 짧은 구로.",
-   "timeline": "지금까지 일어난 사건. 항목마다 {\"when\":때,\"what\":무슨 일} 일어난 순서로.",
-   "style": "시점·시제·말투·문체. 짧은 구로.",
-   "threads": "아직 풀리지 않은 일과 복선. 짧은 구로."
-  },
-  "labels": {
-   "characters": "인물",
-   "world": "세계와 배경",
-   "timeline": "지금까지의 사건",
-   "style": "시점과 문체",
-   "threads": "풀리지 않은 일"
-  }
+  "plan_note": "bible_index는 설정집 목차다. 장면에 쓸 인물·장소·세력·체계·용어 가운데 목차에 있는 것은 그 id를 lookups에 모두 넣는다. 목차에 없어 새로 만드는 것은 new에 이름을 넣는다.",
+  "draft_note": "bible_items는 lookups로 꺼낸 설정집 항목의 지금 시점 값이다. 목차에 있는 항목이 더 필요하면 본문 대신 {\"lookup\":[id]}만 반환한다.",
+  "update_task": "승인된 본문을 설정집에 반영할 변경 명령 목록을 만든다. 본문에 나온 것만 적는다. JSON {\"ops\":[...]}만 반환한다. 이 화의 사건마다 add_event, 인물·관계·상태가 바뀌면 set(새 값과 from_t), 끝난 것은 end, 새 인물·장소는 add_entity, 심은 복선은 thread_open, 거둔 복선은 thread_close, 이 화 요약은 add_episode, 마지막에 meta(now_ep, now_t)를 넣는다. 처음 만드는 설정집이면 prose(overview·synopsis·style)도 넣는다.",
+  "ops_example": [
+   {
+    "op": "add_entity",
+    "entity": {
+     "id": "c_minseo",
+     "kind": "character",
+     "name": "민서",
+     "aliases": [],
+     "summary": "한 줄"
+    }
+   },
+   {
+    "op": "set",
+    "id": "c_minseo",
+    "attr": "want",
+    "value": "짧은 구",
+    "from_t": 0,
+    "ep": 1
+   },
+   {
+    "op": "end",
+    "id": "c_minseo",
+    "attr": "relation:c_seojin",
+    "to_t": 120
+   },
+   {
+    "op": "add_event",
+    "event": {
+     "id": "e0001",
+     "t": 0,
+     "ep": 1,
+     "place": "p_station",
+     "who": [
+      "c_minseo"
+     ],
+     "what": "한 줄",
+     "causes": []
+    }
+   },
+   {
+    "op": "thread_open",
+    "thread": {
+     "id": "t1",
+     "what": "한 줄",
+     "payoff_plan": ""
+    }
+   },
+   {
+    "op": "thread_close",
+    "id": "t1",
+    "ep": 1
+   },
+   {
+    "op": "add_episode",
+    "episode": {
+     "no": 1,
+     "summary": "",
+     "ending": "",
+     "events": [
+      "e0001"
+     ]
+    }
+   },
+   {
+    "op": "prose",
+    "file": "style",
+    "data": {
+     "pov": "",
+     "tense": "",
+     "voice": ""
+    }
+   },
+   {
+    "op": "meta",
+    "now_ep": 1,
+    "now_t": 0
+   }
+  ],
+  "kinds": "character, place, faction, system, term, item"
  }
 }
