@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 686" width="1000" height="686" font-family="Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="14">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2d"/></marker></defs>
+<rect width="1000" height="686" fill="#fbfaf6"/>
+<text x="24" y="34" font-size="17" font-weight="700" fill="#1c1b17">판단구조 (논설 경로)</text>
+<text x="24" y="58" font-size="12.5" fill="#6c685c">번호가 곧 순서이고 4와 6은 같은 게이트라서, FAIL이 난 글은 5를 거쳐 4로 돌아온다.</text>
+<line x1="52" y1="100" x2="52" y2="612" stroke="#dcd7c9" stroke-width="2"/>
+<circle cx="52" cy="100" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="105" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">0</text>
+<text x="84" y="96" font-weight="700" fill="#1c1b17">입장을 세운다</text>
+<text x="84" y="116" font-size="12.5" fill="#6c685c">쓰는 사람의 자리와 독자와 의도를 먼저 정하되, 요청에 없는 칸은 장르에 맞는 화자 가운데 골라 사용자에게 보인다.</text>
+<circle cx="52" cy="164" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="169" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">1</text>
+<text x="84" y="160" font-weight="700" fill="#1c1b17">경로를 정한다</text>
+<text x="199" y="160" font-family="monospace" font-size="11.5" fill="#2a4b7c">route · classify</text>
+<text x="84" y="180" font-size="12.5" fill="#6c685c">요청을 읽어 장르와 경로를 정하고, 원문이 있으면 겉모습을 사람 글과 견주어 본다.</text>
+<circle cx="52" cy="228" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="233" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">2</text>
+<text x="84" y="224" font-weight="700" fill="#1c1b17">뼈대를 뽑는다</text>
+<text x="199" y="224" font-family="monospace" font-size="11.5" fill="#2a4b7c">skeleton</text>
+<text x="84" y="244" font-size="12.5" fill="#6c685c">사실과 전문, 판단과 당위의 순서를 사람 사설 수천 편에서 뽑아 둔 것이 뼈대이고, 여기서 판단의 자리는 사실 뒤로, 끝의 모양은 장르에 맞게 정해진다.</text>
+<circle cx="52" cy="292" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="297" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">3</text>
+<text x="84" y="288" font-weight="700" fill="#1c1b17">살 붙이기</text>
+<text x="84" y="308" font-size="12.5" fill="#6c685c">먼저 독자가 볼 순서대로 사실만 놓은 뒤에, 판단과 당위는 뼈대가 정해 둔 자리에만 넣는다.</text>
+<circle cx="52" cy="356" r="15" fill="#f8e3df" stroke="#b23a2d" stroke-width="2"/><text x="52" y="361" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#b23a2d">4</text>
+<text x="84" y="352" font-weight="700" fill="#1c1b17">문장 게이트</text>
+<text x="184" y="352" font-family="monospace" font-size="11.5" fill="#2a4b7c">sentence_gate</text>
+<text x="84" y="372" font-size="12.5" fill="#6c685c">명제마다 닫았는가, 앞말을 되풀이했는가를 문장마다 재어 PASS와 FAIL을 가르고, 길이와 호흡은 글 단위 눈금으로만 알린다.</text>
+<circle cx="52" cy="420" r="15" fill="#f6ecd4" stroke="#9a6b12" stroke-width="2"/><text x="52" y="425" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#9a6b12">5</text>
+<text x="84" y="416" font-weight="700" fill="#1c1b17">규칙을 주입해 다시 쓴다</text>
+<text x="289" y="416" font-family="monospace" font-size="11.5" fill="#2a4b7c">regen_prompt</text>
+<text x="84" y="436" font-size="12.5" fill="#6c685c">걸린 문장과 해당 규칙을 한데 묶어 필자에게 돌려보내는 단계로, 필자는 사실은 그대로 두고 그 문장만 고친 글을 돌려준다.</text>
+<circle cx="52" cy="484" r="15" fill="#e1f0e5" stroke="#2b7a44" stroke-width="2"/><text x="52" y="489" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#2b7a44">6</text>
+<text x="84" y="480" font-weight="700" fill="#1c1b17">다시 게이트, PASS까지</text>
+<text x="304" y="480" font-family="monospace" font-size="11.5" fill="#2a4b7c">sentence_gate</text>
+<text x="84" y="500" font-size="12.5" fill="#6c685c">횟수로는 끝나지 않는 단계로, 실제로 PASS가 난 본문만 사용자에게 내보내며 PASS 뒤에는 지목되지 않은 문장을 고치지 않는다.</text>
+<circle cx="52" cy="548" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="553" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">7</text>
+<text x="84" y="544" font-weight="700" fill="#1c1b17">표면 검사</text>
+<text x="169" y="544" font-family="monospace" font-size="11.5" fill="#2a4b7c">check</text>
+<text x="84" y="564" font-size="12.5" fill="#6c685c">지표 스무 가지쯤을 사람 글 분포와 견주어 경고를 내는 자리이지만, 그 경고는 게이트 통과와 따로 참고로만 알린다.</text>
+<circle cx="52" cy="612" r="15" fill="#fff" stroke="#dcd7c9" stroke-width="2"/><text x="52" y="617" text-anchor="middle" font-family="monospace" font-size="12" font-weight="600" fill="#6c685c">8</text>
+<text x="84" y="608" font-weight="700" fill="#1c1b17">넘긴다</text>
+<text x="84" y="628" font-size="12.5" fill="#6c685c">PASS 난 본문과 참고 경고를 사용자에게 넘기고, 받은 글과 꼬리표는 어디에도 남기지 않는다.</text>
+<path d="M28,420 C-4,420 -4,356 28,356" stroke="#b23a2d" stroke-width="1.8" fill="none" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text x="14" y="388" font-size="10.5" fill="#b23a2d" transform="rotate(-90 14 388)" text-anchor="middle">FAIL</text>
+</svg>
