@@ -3,6 +3,7 @@
 import difflib
 import json
 import os
+import shutil
 import sys
 import tempfile
 from datetime import date
@@ -12,6 +13,43 @@ DOCS = Path(__file__).resolve().parent / "bible"
 KINDS = {"character", "place", "faction", "system", "term", "item"}
 PROSE = ("overview", "synopsis", "style")
 THREAD_STATUS = {"open", "closed", "dropped"}
+# 2026-11-11 user decision: the bible keeps where the story is now, a rough plot flow
+# (facts only, reviewed by the user before writing) and managed style rules.
+NOW_KEYS = ("ep", "story_time", "place", "situation", "characters", "constants", "prev_ending")
+PLOT_STATUS = {"review", "approved"}
+BEAT_STATE = {"next", "done", "later"}
+
+
+SNAPSHOTS = ".snapshots"
+
+
+def episode_of(ops):
+    """The episode an ops list writes: add_episode's no, else the last meta now_ep."""
+    if not isinstance(ops, list):
+        return None
+    for op in ops:
+        if isinstance(op, dict) and op.get("op") == "add_episode" and isinstance(op.get("episode"), dict) \
+                and isinstance(op["episode"].get("no"), int):
+            return op["episode"]["no"]
+    eps = [op["now_ep"] for op in ops if isinstance(op, dict) and op.get("op") == "meta" and isinstance(op.get("now_ep"), int)]
+    return eps[-1] if eps else None
+
+
+def snapshot(root, snap):
+    """Copy the bible as it is before an episode is applied (once per episode)."""
+    if snap.exists():
+        shutil.rmtree(snap)
+    shutil.copytree(root, snap, ignore=shutil.ignore_patterns(SNAPSHOTS, ".tmp-*"))
+
+
+def restore(snap, root):
+    """Put the bible back to the snapshot, keeping the snapshots themselves."""
+    for p in root.iterdir():
+        if p.name == SNAPSHOTS:
+            continue
+        shutil.rmtree(p) if p.is_dir() else p.unlink()
+    for p in snap.iterdir():
+        (shutil.copytree if p.is_dir() else shutil.copy2)(p, root / p.name)
 
 
 class Fail(Exception):
@@ -59,6 +97,10 @@ class Bible:
             self.episodes[e.get("no")] = e
         tp = self.root / "threads.json"
         self.threads = read_json(tp) if tp.is_file() else []
+        np_ = self.root / "now.json"
+        self.now = read_json(np_) if np_.is_file() else {}
+        pp = self.root / "plot.json"
+        self.plot = read_json(pp) if pp.is_file() else {"status": "review", "beats": []}
         self.changes = []
         self.retired = set()
         log = self.root / "changes.jsonl"
@@ -139,6 +181,24 @@ class Bible:
         for th in self.threads:
             if th.get("status") not in THREAD_STATUS:
                 problems.append({"id": th.get("id"), "error": "bad_thread_status", "fix": "status is open, closed or dropped"})
+        if not isinstance(self.now, dict) or set(self.now) - set(NOW_KEYS):
+            problems.append({"id": "now", "error": "bad_now", "fix": "now keys are " + ", ".join(NOW_KEYS)})
+        plot = self.plot
+        if not isinstance(plot, dict) or plot.get("status") not in PLOT_STATUS or not isinstance(plot.get("beats"), list):
+            problems.append({"id": "plot", "error": "bad_plot", "fix": "plot is {status: review|approved, beats: [...]}"})
+        else:
+            seen = set()
+            for b in plot["beats"]:
+                if not isinstance(b, dict) or not isinstance(b.get("id"), str) or not isinstance(b.get("what"), str) \
+                        or not b["what"].strip() or b.get("state") not in BEAT_STATE or b["id"] in seen:
+                    problems.append({"id": "plot", "error": "bad_beat", "beat": b,
+                                     "fix": "beat is {id (unique), what, state: next|done|later}"})
+                else:
+                    seen.add(b["id"])
+        rules = self.prose.get("style", {}).get("rules", [])
+        if not isinstance(rules, list) or len({r.get("id") for r in rules if isinstance(r, dict)}) != len(rules) or \
+                any(not isinstance(r, dict) or not isinstance(r.get("rule"), str) or not r["rule"].strip() for r in rules):
+            problems.append({"id": "style", "error": "bad_style_rules", "fix": "style.rules is [{id (unique), rule, source, active}]"})
         return problems
 
     def suggest(self, ref):
@@ -292,6 +352,55 @@ class Bible:
             for k in ("now_ep", "now_t", "title", "time_unit"):
                 if k in op:
                     self.meta[k] = op[k]
+        elif kind == "now":
+            data = {k: v for k, v in op.items() if k != "op"}
+            if not data or set(data) - set(NOW_KEYS):
+                raise Fail("bad_now", "now takes any of: " + ", ".join(NOW_KEYS))
+            self.now.update(data)
+        elif kind == "plot_add":
+            self._need(op, "beat")
+            b = op["beat"]
+            if not isinstance(b, dict) or not isinstance(b.get("what"), str) or not b["what"].strip():
+                raise Fail("bad_beat", "beat needs what (one line of fact)")
+            beats = self.plot.setdefault("beats", [])
+            b = {"id": b.get("id") or "b%03d" % (len(beats) + 1), "what": b["what"], "state": b.get("state", "next")}
+            if b["id"] in {x.get("id") for x in beats}:
+                raise Fail("duplicate_id", "use another beat id", id=b["id"])
+            beats.append(b)
+            if self.plot.get("status") == "approved" and op.get("by") != "user":
+                self.plot["status"] = "review"
+        elif kind == "plot_set":
+            self._need(op, "id", "state")
+            if op["state"] not in BEAT_STATE:
+                raise Fail("bad_beat_state", "state is next, done or later")
+            b = next((x for x in self.plot.get("beats", []) if x.get("id") == op["id"]), None)
+            if b is None:
+                raise Fail("unknown_id", "no such beat", id=op["id"])
+            b["state"] = op["state"]
+            if op["state"] == "done":
+                b["ep"] = op.get("ep", self.meta.get("now_ep"))
+            else:
+                b.pop("ep", None)
+        elif kind == "plot_status":
+            self._need(op, "status")
+            if op["status"] not in PLOT_STATUS:
+                raise Fail("bad_plot_status", "status is review or approved")
+            self.plot["status"] = op["status"]
+        elif kind == "style_rule_add":
+            self._need(op, "rule")
+            style = self.prose.setdefault("style", {})
+            rules = style.setdefault("rules", [])
+            rid = op.get("id") or "r%02d" % (len(rules) + 1)
+            if rid in {r.get("id") for r in rules}:
+                raise Fail("duplicate_id", "use another rule id", id=rid)
+            rules.append({"id": rid, "rule": op["rule"], "source": op.get("source", ""),
+                          "since_ep": op.get("ep", self.meta.get("now_ep")), "active": True})
+        elif kind == "style_rule_retire":
+            self._need(op, "id")
+            r = next((x for x in self.prose.get("style", {}).get("rules", []) if x.get("id") == op["id"]), None)
+            if r is None:
+                raise Fail("unknown_id", "no such style rule", id=op["id"])
+            r["active"] = False
         elif kind == "prose":
             self._need(op, "file", "data")
             if op["file"] not in PROSE or not isinstance(op["data"], dict):
@@ -317,6 +426,8 @@ class Bible:
         for no, ep in self.episodes.items():
             write_json(self.root / "episodes" / ("%03d.json" % no), ep)
         write_json(self.root / "threads.json", self.threads)
+        write_json(self.root / "now.json", self.now)
+        write_json(self.root / "plot.json", self.plot)
         if self.changes:
             with (self.root / "changes.jsonl").open("a", encoding="utf-8") as log:
                 for row in self.changes:
@@ -361,6 +472,8 @@ def cmd(argv):
         for folder in ("entities", "events", "episodes"):
             (root / folder).mkdir(parents=True, exist_ok=True)
         write_json(root / "threads.json", [])
+        write_json(root / "now.json", {})
+        write_json(root / "plot.json", {"status": "review", "beats": []})
         b = Bible(root)
         write_json(root / "index.json", b.index())
         return {"ok": True, "dir": str(root)}
@@ -404,6 +517,8 @@ def cmd(argv):
             return {"ok": True, "item": b.episodes[int(i)]}
         if i in b.prose:
             return {"ok": True, "item": b.prose[i]}
+        if i in ("now", "plot"):
+            return {"ok": True, "item": getattr(b, i)}
         raise Fail("unknown_id", b.suggest(i), id=i)
     if name == "find":
         q = " ".join(rest).strip()
@@ -419,17 +534,38 @@ def cmd(argv):
         rest = [r for r in rest if r != "--dry-run"]
         if not rest:
             raise Fail("missing_ops", "bible.py apply DIR OPS.json")
-        b.apply(read_json(Path(rest[0])))
+        ops = read_json(Path(rest[0]))
+        # Applying one episode again (a rewrite) first undoes that episode's previous apply.
+        ep = episode_of(ops)
+        snap = b.root / SNAPSHOTS / ("ep-%03d" % ep) if ep is not None else None
+        replaced = False
+        if snap is not None and snap.is_dir():
+            now = b.meta.get("now_ep") or 0
+            if now > ep:
+                raise Fail("episode_not_latest", "episode %d was applied before the later episode %d; "
+                           "undo the later episodes first or ask the user" % (ep, now), episode=ep, now_ep=now)
+            if now == ep:
+                b = Bible(snap)
+                replaced = True
+        b.apply(ops)
         problems = b.validate()
         if problems:
             raise Fail("invalid_bible", "nothing was written; fix the listed problems", problems=problems[:20])
         if not dry:
+            root = Path(args[0])
+            if replaced:
+                restore(snap, root)
+                b.root = root
+            elif snap is not None:
+                snapshot(root, snap)
             b.save()
-        return {"ok": True, "applied": len(b.changes), "written": not dry, "findings": b.check()}
+        return {"ok": True, "applied": len(b.changes), "written": not dry, "episode": ep,
+                "replaced_previous_apply": replaced, "findings": b.check()}
     if name == "pack":
         target = opt("--out", None)
         packed = {"format": "dashi-story-bible", "meta": b.meta, "prose": b.prose, "entities": b.entities,
-                  "events": b.events, "episodes": {str(k): v for k, v in b.episodes.items()}, "threads": b.threads}
+                  "events": b.events, "episodes": {str(k): v for k, v in b.episodes.items()}, "threads": b.threads,
+                  "now": b.now, "plot": b.plot}
         text = json.dumps(packed, ensure_ascii=False)
         if target:
             Path(target).write_text(text, encoding="utf-8")

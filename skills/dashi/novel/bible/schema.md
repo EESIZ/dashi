@@ -30,3 +30,9 @@ thread (item of `threads.json`):
 overview / synopsis / style: free objects.
 
 See: changes.
+
+now.json: {ep, story_time, place, situation, characters: {id: state}, constants: [fixed premises], prev_ending: last ~1500 chars of the previous episode, verbatim}
+
+plot.json: {status: review|approved, beats: [{id, what, state: next|done|later, ep}]}
+
+style.json rules: [{id, rule, source, since_ep, active}]

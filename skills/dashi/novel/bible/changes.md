@@ -16,9 +16,19 @@
  {"op": "retire", "id": "c_old", "reason": "removed from story"},
  {"op": "retire", "id": "c_minseo", "attr": "lie"},
  {"op": "prose", "file": "synopsis", "data": {"whole": "..."}},
- {"op": "meta", "now_ep": 9, "now_t": 402}
+ {"op": "meta", "now_ep": 9, "now_t": 402},
+ {"op": "now", "ep": 9, "place": "...", "situation": "...", "characters": {"c_minseo": "..."}, "constants": ["..."], "prev_ending": "last ~1500 chars"},
+ {"op": "plot_add", "beat": {"what": "one line of fact"}},
+ {"op": "plot_set", "id": "b003", "state": "done", "ep": 9},
+ {"op": "plot_status", "status": "approved"},
+ {"op": "style_rule_add", "rule": "one line", "source": "user"},
+ {"op": "style_rule_retire", "id": "r02"}
 ]
 ```
+
+- now = where the story is now (replaced field by field after each episode).
+- plot = rough flow of facts. The writer only writes while plot status is approved; a drafted plot comes back as review for the user.
+- style rules apply to every writing and review step while active.
 
 - set = change in story (closes the open fact of the same attr, keeps history).
 - retire = "never was" (deletes from files, logs once). Use set/end for in-story change.
